@@ -2,7 +2,7 @@ import type { NextAuthOptions } from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
 import { getDoc, doc } from "firebase-admin/firestore"
 
-import { firebaseAdminDb } from "@/lib/firebase/admin"
+import { getFirebaseAdminDb } from "@/lib/firebase/admin"
 import { COLLECTIONS } from "@/lib/firebase/collections"
 
 type FirebaseSignInResponse = {
@@ -43,6 +43,7 @@ async function firebasePasswordSignIn(email: string, password: string): Promise<
 }
 
 async function assertIsAdmin(uid: string) {
+  const firebaseAdminDb = getFirebaseAdminDb()
   const ref = doc(firebaseAdminDb, COLLECTIONS.admins, uid)
   const snap = await getDoc(ref)
   if (!snap.exists()) {

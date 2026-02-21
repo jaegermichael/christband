@@ -2,7 +2,7 @@ import { getServerSession } from "next-auth"
 import { redirect } from "next/navigation"
 
 import { authOptions } from "@/lib/auth/nextauth"
-import { firebaseAdminDb } from "@/lib/firebase/admin"
+import { getFirebaseAdminDb } from "@/lib/firebase/admin"
 import { COLLECTIONS, type PaymentStatus } from "@/lib/firebase/collections"
 
 type PaymentDoc = {
@@ -18,6 +18,7 @@ async function confirmPayment(formData: FormData) {
   "use server"
   const id = String(formData.get("id") || "")
   if (!id) return
+  const firebaseAdminDb = getFirebaseAdminDb()
   await firebaseAdminDb.collection(COLLECTIONS.payments).doc(id).update({ status: "confirmed" })
 }
 
@@ -25,12 +26,15 @@ async function failPayment(formData: FormData) {
   "use server"
   const id = String(formData.get("id") || "")
   if (!id) return
+  const firebaseAdminDb = getFirebaseAdminDb()
   await firebaseAdminDb.collection(COLLECTIONS.payments).doc(id).update({ status: "failed" })
 }
 
 export default async function AdminPaymentsPage() {
   const session = await getServerSession(authOptions)
   if (!session) redirect("/admin/login")
+
+  const firebaseAdminDb = getFirebaseAdminDb()
 
   const snap = await firebaseAdminDb
     .collection(COLLECTIONS.payments)

@@ -2,7 +2,7 @@ import { getServerSession } from "next-auth"
 import { redirect } from "next/navigation"
 
 import { authOptions } from "@/lib/auth/nextauth"
-import { firebaseAdminDb } from "@/lib/firebase/admin"
+import { getFirebaseAdminDb } from "@/lib/firebase/admin"
 import { COLLECTIONS, type MemberStatus } from "@/lib/firebase/collections"
 
 type MemberDoc = {
@@ -17,6 +17,7 @@ async function approveMember(formData: FormData) {
   "use server"
   const id = String(formData.get("id") || "")
   if (!id) return
+  const firebaseAdminDb = getFirebaseAdminDb()
   await firebaseAdminDb.collection(COLLECTIONS.members).doc(id).update({ status: "approved" })
 }
 
@@ -24,12 +25,15 @@ async function rejectMember(formData: FormData) {
   "use server"
   const id = String(formData.get("id") || "")
   if (!id) return
+  const firebaseAdminDb = getFirebaseAdminDb()
   await firebaseAdminDb.collection(COLLECTIONS.members).doc(id).update({ status: "rejected" })
 }
 
 export default async function AdminMembersPage() {
   const session = await getServerSession(authOptions)
   if (!session) redirect("/admin/login")
+
+  const firebaseAdminDb = getFirebaseAdminDb()
 
   const snap = await firebaseAdminDb
     .collection(COLLECTIONS.members)

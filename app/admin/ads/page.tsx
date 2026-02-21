@@ -2,7 +2,7 @@ import { getServerSession } from "next-auth"
 import { redirect } from "next/navigation"
 
 import { authOptions } from "@/lib/auth/nextauth"
-import { firebaseAdminDb } from "@/lib/firebase/admin"
+import { getFirebaseAdminDb } from "@/lib/firebase/admin"
 import { COLLECTIONS, type AdStatus } from "@/lib/firebase/collections"
 
 type AdDoc = {
@@ -18,6 +18,7 @@ async function approveAd(formData: FormData) {
   "use server"
   const id = String(formData.get("id") || "")
   if (!id) return
+  const firebaseAdminDb = getFirebaseAdminDb()
   await firebaseAdminDb.collection(COLLECTIONS.ads).doc(id).update({ status: "approved" })
 }
 
@@ -25,12 +26,15 @@ async function rejectAd(formData: FormData) {
   "use server"
   const id = String(formData.get("id") || "")
   if (!id) return
+  const firebaseAdminDb = getFirebaseAdminDb()
   await firebaseAdminDb.collection(COLLECTIONS.ads).doc(id).update({ status: "rejected" })
 }
 
 export default async function AdminAdsPage() {
   const session = await getServerSession(authOptions)
   if (!session) redirect("/admin/login")
+
+  const firebaseAdminDb = getFirebaseAdminDb()
 
   const snap = await firebaseAdminDb
     .collection(COLLECTIONS.ads)
