@@ -1,7 +1,8 @@
 import { mkdir, readFile, rename, writeFile } from "node:fs/promises"
+import { tmpdir } from "node:os"
 import { dirname, join } from "node:path"
 
-const dataDir = join(process.cwd(), "data")
+const dataDir = process.env.VERCEL ? join(tmpdir(), "christbrand-data") : join(process.cwd(), "data")
 
 async function ensureFile(path: string, fallback: unknown) {
   await mkdir(dirname(path), { recursive: true })
