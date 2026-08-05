@@ -28,6 +28,7 @@ const navLinks = [
     ],
   },
   { label: "Membership", href: "/membership" },
+  { label: "Gospel Music", href: "/gospel" },
   { label: "Subscribe", href: "/subscriptions" },
 ]
 

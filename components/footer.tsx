@@ -17,6 +17,7 @@ const footerSections = [
       { label: "Events Calendar", href: "/events" },
       { label: "Prayer Corner", href: "/prayer" },
       { label: "Word of Motivation", href: "/devotionals" },
+      { label: "Gospel Music", href: "/gospel" },
       { label: "Christian Books", href: "/books" },
     ],
   },

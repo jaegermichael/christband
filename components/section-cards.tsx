@@ -9,6 +9,7 @@ import {
   HandHeart,
   BookOpen,
   Library,
+  Music,
   UserPlus,
   CreditCard,
   Megaphone,
@@ -84,6 +85,13 @@ const sections = [
     icon: Library,
     href: "/books",
     color: "from-[#3B1027] to-[#551839]",
+  },
+  {
+    title: "Gospel Music",
+    description: "Enjoy worship playlists, choir performances, and music ministry resources.",
+    icon: Music,
+    href: "/gospel",
+    color: "from-[#551839] to-[#7A2A5E]",
   },
   {
     title: "Membership",

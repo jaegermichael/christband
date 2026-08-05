@@ -1,5 +1,17 @@
 import { NextResponse } from "next/server"
+import { z } from "zod"
 import { createMemberApplication, listMembers } from "@/lib/members"
+
+const membershipSchema = z.object({
+  firstName: z.string().trim().min(1),
+  lastName: z.string().trim().min(1),
+  email: z.string().trim().email(),
+  phone: z.string().trim().min(7),
+  memberType: z.string().trim().min(1),
+  province: z.string().trim().min(1),
+  city: z.string().trim().min(1),
+  church: z.string().trim().optional(),
+})
 
 export async function GET() {
   return NextResponse.json({ members: await listMembers() })
@@ -7,21 +19,21 @@ export async function GET() {
 
 export async function POST(request: Request) {
   const body = await request.json().catch(() => null)
-  const required = ["firstName", "lastName", "email", "phone", "memberType", "province", "city"]
+  const result = membershipSchema.safeParse(body)
 
-  if (!body || required.some((key) => typeof body[key] !== "string" || body[key].trim() === "")) {
-    return NextResponse.json({ error: "Please complete all required fields." }, { status: 400 })
+  if (!result.success) {
+    return NextResponse.json({ error: "Please complete all required fields with valid information." }, { status: 400 })
   }
 
   const member = await createMemberApplication({
-    firstName: body.firstName.trim(),
-    lastName: body.lastName.trim(),
-    email: body.email.trim(),
-    phone: body.phone.trim(),
-    memberType: body.memberType.trim(),
-    province: body.province.trim(),
-    city: body.city.trim(),
-    church: typeof body.church === "string" && body.church.trim() ? body.church.trim() : undefined,
+    firstName: result.data.firstName,
+    lastName: result.data.lastName,
+    email: result.data.email,
+    phone: result.data.phone,
+    memberType: result.data.memberType,
+    province: result.data.province,
+    city: result.data.city,
+    church: result.data.church || undefined,
   })
 
   return NextResponse.json({ member }, { status: 201 })

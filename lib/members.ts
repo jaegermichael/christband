@@ -1,4 +1,5 @@
-import { readJson, writeJson } from "@/lib/file-store"
+import { prisma } from "@/lib/db"
+import type { MemberApplication as PrismaMemberApplication, RecordStatus } from "@prisma/client"
 
 export type MemberStatus = "pending" | "approved" | "rejected"
 
@@ -19,10 +20,32 @@ export type MemberApplication = {
   updatedAt: string
 }
 
-const membersFile = "member-applications.json"
+const statusMap: Record<MemberStatus, RecordStatus> = {
+  pending: "PENDING",
+  approved: "APPROVED",
+  rejected: "REJECTED",
+}
+
+const reverseStatusMap: Record<RecordStatus, MemberStatus> = {
+  PENDING: "pending",
+  APPROVED: "approved",
+  REJECTED: "rejected",
+  ARCHIVED: "pending",
+}
+
+function normalizeMember(member: PrismaMemberApplication): MemberApplication {
+  return {
+    ...member,
+    status: reverseStatusMap[member.status] ?? "pending",
+    dateApplied: member.createdAt.toISOString().slice(0, 10),
+  }
+}
 
 export async function listMembers() {
-  return readJson<MemberApplication[]>(membersFile, [])
+  const members = await prisma.memberApplication.findMany({
+    orderBy: { createdAt: "desc" },
+  })
+  return members.map(normalizeMember)
 }
 
 export async function createMemberApplication(input: {
@@ -35,32 +58,29 @@ export async function createMemberApplication(input: {
   city: string
   church?: string
 }) {
-  const now = new Date().toISOString()
-  const member: MemberApplication = {
-    id: crypto.randomUUID(),
-    ...input,
-    name: `${input.firstName} ${input.lastName}`,
-    status: "pending",
-    dateApplied: now.slice(0, 10),
-    createdAt: now,
-    updatedAt: now,
-  }
+  const member = await prisma.memberApplication.create({
+    data: {
+      firstName: input.firstName,
+      lastName: input.lastName,
+      name: `${input.firstName} ${input.lastName}`,
+      email: input.email,
+      phone: input.phone,
+      memberType: input.memberType,
+      province: input.province,
+      city: input.city,
+      church: input.church,
+      status: statusMap.pending,
+    },
+  })
 
-  const members = await listMembers()
-  await writeJson(membersFile, [member, ...members])
-  return member
+  return normalizeMember(member)
 }
 
 export async function updateMemberStatus(id: string, status: MemberStatus) {
-  const members = await listMembers()
-  const member = members.find((item) => item.id === id)
-  if (!member) return null
+  const updated = await prisma.memberApplication.update({
+    where: { id },
+    data: { status: statusMap[status] },
+  })
 
-  const updated = { ...member, status, updatedAt: new Date().toISOString() }
-  await writeJson(
-    membersFile,
-    members.map((item) => (item.id === id ? updated : item))
-  )
-
-  return updated
+  return normalizeMember(updated)
 }
