@@ -4,6 +4,12 @@ import { Search, ArrowRight, Cross } from "lucide-react"
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-[#551839] via-[#3B1027] to-[#2F0B20]">
+      <img
+        src={encodeURI("/images/Welcome background.jpg")}
+        alt="Church community worship background"
+        className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover opacity-20"
+        aria-hidden="true"
+      />
       {/* Decorative elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute -right-20 -top-20 h-80 w-80 rounded-full bg-[#D4AF37]" />

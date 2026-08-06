@@ -5,14 +5,14 @@ import { ShoppingCart, Star, Tag } from "lucide-react"
 import Link from "next/link"
 
 const products = [
-  { name: "Christbrand Cross Necklace", category: "Jewellery", price: "$12.00", priceZIG: "ZiG 45", rating: 4.9, description: "Elegant gold-plated cross pendant on a fine chain. A beautiful symbol of faith.", image: "cross-necklace" },
-  { name: "Faith Over Fear T-Shirt", category: "Apparel", price: "$15.00", priceZIG: "ZiG 55", rating: 4.7, description: "Premium cotton t-shirt with 'Faith Over Fear' design. Available in all sizes.", image: "faith-shirt" },
-  { name: "Shona/Ndebele Study Bible", category: "Bibles", price: "$25.00", priceZIG: "ZiG 95", rating: 5.0, description: "Complete study Bible with commentary in Shona and Ndebele. Leather-bound edition.", image: "study-bible" },
-  { name: "Prayer Journal — Daily Walk", category: "Stationery", price: "$8.00", priceZIG: "ZiG 30", rating: 4.8, description: "Guided prayer journal with 365 daily prompts. Gold-embossed cover.", image: "prayer-journal" },
-  { name: "Worship Hymnal Collection", category: "Music", price: "$10.00", priceZIG: "ZiG 38", rating: 4.6, description: "USB drive with 200+ worship songs from Zimbabwean gospel artists.", image: "hymnal-usb" },
-  { name: "Anointing Oil Gift Set", category: "Spiritual Items", price: "$18.00", priceZIG: "ZiG 68", rating: 4.8, description: "Premium olive oil gift set with frankincense and myrrh blends. 3 bottles included.", image: "anointing-oil" },
-  { name: "Church Wall Calendar 2026", category: "Stationery", price: "$5.00", priceZIG: "ZiG 19", rating: 4.5, description: "Beautiful calendar featuring Zimbabwean church photography and daily scripture verses.", image: "church-calendar" },
-  { name: "Christbrand Wristband Pack", category: "Accessories", price: "$3.00", priceZIG: "ZiG 11", rating: 4.7, description: "Pack of 5 silicone wristbands with faith-inspired messages. Purple and gold colours.", image: "wristband-pack" },
+  { name: "Christbrand Cross Necklace", category: "Jewellery", price: "$12.00", priceZIG: "ZiG 45", rating: 4.9, description: "Elegant gold-plated cross pendant on a fine chain. A beautiful symbol of faith.", image: "download.jpg" },
+  { name: "Faith Over Fear T-Shirt", category: "Apparel", price: "$15.00", priceZIG: "ZiG 55", rating: 4.7, description: "Premium cotton t-shirt with 'Faith Over Fear' design. Available in all sizes.", image: "Imagenes AI religiosas gratis.jpg" },
+  { name: "Shona/Ndebele Study Bible", category: "Bibles", price: "$25.00", priceZIG: "ZiG 95", rating: 5.0, description: "Complete study Bible with commentary in Shona and Ndebele. Leather-bound edition.", image: "download (1).jpg" },
+  { name: "Prayer Journal — Daily Walk", category: "Stationery", price: "$8.00", priceZIG: "ZiG 30", rating: 4.8, description: "Guided prayer journal with 365 daily prompts. Gold-embossed cover.", image: "download (2).jpg" },
+  { name: "Worship Hymnal Collection", category: "Music", price: "$10.00", priceZIG: "ZiG 38", rating: 4.6, description: "USB drive with 200+ worship songs from Zimbabwean gospel artists.", image: "Jesus Banner.jpg" },
+  { name: "Anointing Oil Gift Set", category: "Spiritual Items", price: "$18.00", priceZIG: "ZiG 68", rating: 4.8, description: "Premium olive oil gift set with frankincense and myrrh blends. 3 bottles included.", image: "Welcome background.jpg" },
+  { name: "Church Wall Calendar 2026", category: "Stationery", price: "$5.00", priceZIG: "ZiG 19", rating: 4.5, description: "Beautiful calendar featuring Zimbabwean church photography and daily scripture verses.", image: "St Francis Church ⛪  Sri Lanka.jpg" },
+  { name: "Christbrand Wristband Pack", category: "Accessories", price: "$3.00", priceZIG: "ZiG 11", rating: 4.7, description: "Pack of 5 silicone wristbands with faith-inspired messages. Purple and gold colours.", image: "Christian Group Prayer – African Faith, Unity & Spiritual Growth Inspiration.jpg" },
 ]
 
 const shopCategories = ["All", "Jewellery", "Apparel", "Bibles", "Stationery", "Music", "Spiritual Items", "Accessories"]
@@ -42,9 +42,12 @@ export default function ShopPage() {
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {products.map((product) => (
               <div key={product.name} className="group rounded-2xl border border-[#E8E0D0] bg-[#FFFFFF] shadow-sm transition-all hover:shadow-lg hover:border-[#D4AF37]/50 overflow-hidden">
-                {/* Product image placeholder */}
-                <div className="flex h-48 items-center justify-center bg-gradient-to-br from-[#F5F0E8] to-[#E8E0D0]">
-                  <ShoppingCart className="h-12 w-12 text-[#551839]/20" />
+                <div className="overflow-hidden">
+                  <img
+                    src={encodeURI(`/images/${product.image}`)}
+                    alt={product.name}
+                    className="h-48 w-full object-cover"
+                  />
                 </div>
                 <div className="p-5">
                   <span className="inline-block rounded-full bg-[#551839]/10 px-2.5 py-0.5 text-[10px] font-medium uppercase text-[#551839]">{product.category}</span>

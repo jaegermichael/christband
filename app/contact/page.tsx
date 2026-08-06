@@ -1,6 +1,12 @@
+import type { Metadata } from "next"
 import { Footer } from "@/components/footer"
 import { Navbar } from "@/components/navbar"
 import { SideButtons } from "@/components/side-buttons"
+
+export const metadata: Metadata = {
+  title: "Contact | Christbrand",
+  description: "Contact Christbrand for gospel music submissions, ministry features, and worship promotion in Zimbabwe.",
+}
 
 export default function ContactPage() {
   return (
@@ -15,6 +21,16 @@ export default function ContactPage() {
             <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-[#E8D8C6] sm:text-lg">
               Share your ministry details, gospel recordings, choir stories, and event information so Christbrand can help your music ministry reach the full Body of Christ.
             </p>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-6xl px-4 py-10">
+          <div className="overflow-hidden rounded-[2rem] border border-[#E8E0D0] bg-[#FFFFFF] shadow-sm">
+            <img
+              src={encodeURI("/images/St Francis Church ⛪  Sri Lanka.jpg")}
+              alt="Church interior with worshippers"
+              className="h-72 w-full object-cover sm:h-96"
+            />
           </div>
         </section>
 

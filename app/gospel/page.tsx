@@ -1,16 +1,22 @@
+import type { Metadata } from "next"
 import { Footer } from "@/components/footer"
 import { Navbar } from "@/components/navbar"
 import { SideButtons } from "@/components/side-buttons"
 import Link from "next/link"
 
+export const metadata: Metadata = {
+  title: "Gospel Music | Christbrand",
+  description: "Explore gospel worship playlists, choir performances, and music ministry resources on Christbrand.",
+}
+
 const imageCards = [
   {
-    src: "https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=1400&q=80",
+    src: encodeURI("/images/Christian Group Prayer – African Faith, Unity & Spiritual Growth Inspiration.jpg"),
     alt: "Church worship team singing gospel music",
     caption: "Soulful worship nights with local gospel artists.",
   },
   {
-    src: "https://images.unsplash.com/photo-1529988885170-6dc8ce34ce6d?auto=format&fit=crop&w=1400&q=80",
+    src: encodeURI("/images/Jesus Banner.jpg"),
     alt: "Raised hands in praise during concert worship",
     caption: "Raise your hands in praise with Christbrand gospel ministry.",
   },

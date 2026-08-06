@@ -35,9 +35,20 @@ const reverseStatusMap: Record<RecordStatus, MemberStatus> = {
 
 function normalizeMember(member: PrismaMemberApplication): MemberApplication {
   return {
-    ...member,
+    id: member.id,
+    firstName: member.firstName,
+    lastName: member.lastName,
+    name: `${member.firstName} ${member.lastName}`,
+    email: member.email,
+    phone: member.phone,
+    memberType: member.memberType,
+    province: member.province,
+    city: member.city,
+    church: member.church ?? undefined,
     status: reverseStatusMap[member.status] ?? "pending",
     dateApplied: member.createdAt.toISOString().slice(0, 10),
+    createdAt: member.createdAt.toISOString(),
+    updatedAt: member.updatedAt.toISOString(),
   }
 }
 
@@ -62,7 +73,6 @@ export async function createMemberApplication(input: {
     data: {
       firstName: input.firstName,
       lastName: input.lastName,
-      name: `${input.firstName} ${input.lastName}`,
       email: input.email,
       phone: input.phone,
       memberType: input.memberType,

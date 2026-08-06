@@ -74,12 +74,18 @@ export function Navbar() {
                 onMouseEnter={() => setOpenDropdown(link.label)}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
-                <button className="flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-[#2F0B20] transition-colors hover:bg-[#F5F0E8] hover:text-[#551839]">
+                <button
+                  type="button"
+                  aria-haspopup="menu"
+                  aria-expanded={openDropdown === link.label}
+                  aria-controls={`dropdown-${link.label}`}
+                  className="flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-[#2F0B20] transition-colors hover:bg-[#F5F0E8] hover:text-[#551839]"
+                >
                   {link.label}
                   <ChevronDown className="h-3.5 w-3.5" />
                 </button>
                 {openDropdown === link.label && (
-                  <div className="absolute left-0 top-full z-50 min-w-[200px] rounded-xl border border-[#E8E0D0] bg-[#FFFDF7] p-2 shadow-lg">
+                  <div id={`dropdown-${link.label}`} className="absolute left-0 top-full z-50 min-w-[200px] rounded-xl border border-[#E8E0D0] bg-[#FFFDF7] p-2 shadow-lg">
                     {link.children.map((child) => (
                       <Link
                         key={child.href}
@@ -116,6 +122,8 @@ export function Navbar() {
             onClick={() => setMobileOpen(!mobileOpen)}
             className="rounded-lg p-2 text-[#551839] transition-colors hover:bg-[#F5F0E8] lg:hidden"
             aria-label="Toggle navigation menu"
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-menu"
           >
             {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -129,7 +137,10 @@ export function Navbar() {
             link.children ? (
               <div key={link.label}>
                 <button
+                  type="button"
                   onClick={() => setOpenDropdown(openDropdown === link.label ? null : link.label)}
+                  aria-expanded={openDropdown === link.label}
+                  aria-controls={`dropdown-${link.label}`}
                   className="flex w-full items-center justify-between py-3 text-sm font-medium text-[#2F0B20]"
                 >
                   {link.label}
