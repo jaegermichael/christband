@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { PageHeader } from "@/components/page-header"
@@ -19,7 +20,7 @@ const shopCategories = ["All", "Jewellery", "Apparel", "Bibles", "Stationery", "
 
 export default function ShopPage() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-[100dvh] flex-col">
       <Navbar />
       <main className="flex-1">
         <PageHeader
@@ -42,11 +43,13 @@ export default function ShopPage() {
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {products.map((product) => (
               <div key={product.name} className="group rounded-2xl border border-[#E8E0D0] bg-[#FFFFFF] shadow-sm transition-all hover:shadow-lg hover:border-[#D4AF37]/50 overflow-hidden">
-                <div className="overflow-hidden">
-                  <img
+                <div className="relative h-48 overflow-hidden">
+                  <Image
                     src={encodeURI(`/images/${product.image}`)}
                     alt={product.name}
-                    className="h-48 w-full object-cover"
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
                 <div className="p-5">

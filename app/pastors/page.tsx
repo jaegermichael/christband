@@ -1,22 +1,23 @@
+import Image from "next/image"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { PageHeader } from "@/components/page-header"
 import { Search, MapPin, Phone, BookOpen, Mail } from "lucide-react"
 
 const pastors = [
-  { name: "Pastor Emmanuel Chikwanda", title: "Senior Pastor", church: "Grace Fellowship Church", city: "Harare", phone: "+263 772 100 001", email: "pastor.e@grace.co.zw", bio: "Over 20 years of ministry experience. Passionate about community transformation and youth development." },
-  { name: "Bishop Florence Mutasa", title: "Bishop", church: "Victory Bible Church", city: "Bulawayo", phone: "+263 773 200 002", email: "bishop.f@victory.co.zw", bio: "Pioneering church leader dedicated to women empowerment and family ministry in the Matabeleland region." },
-  { name: "Pastor David Moyo", title: "Lead Pastor", church: "Living Waters Ministries", city: "Mutare", phone: "+263 774 300 003", email: "pastor.d@livingwaters.co.zw", bio: "Anointed teacher and evangelist with a heart for reaching the Eastern Highlands communities." },
-  { name: "Reverend Sarah Ncube", title: "Reverend", church: "Christ Embassy Harare", city: "Harare", phone: "+263 775 400 004", email: "rev.s@christembassy.co.zw", bio: "Known for powerful worship ministry and discipleship programmes across Harare." },
-  { name: "Pastor Joseph Nyathi", title: "Founder & Pastor", church: "Abundant Life Church", city: "Gweru", phone: "+263 776 500 005", email: "pastor.j@abundant.co.zw", bio: "Church planter and author. Founded 5 congregations across the Midlands province." },
-  { name: "Apostle Grace Mlambo", title: "Apostle", church: "Faith World Ministries", city: "Masvingo", phone: "+263 777 600 006", email: "apostle.g@faithworld.co.zw", bio: "Prophetic voice in the Southern region. Active in humanitarian work and community development." },
+  { name: "Pastor Emmanuel Chikwanda", title: "Senior Pastor", church: "Grace Fellowship Church", city: "Harare", phone: "+263 772 100 001", email: "pastor.e@grace.co.zw", bio: "Over 20 years of ministry experience. Passionate about community transformation and youth development.", image: "Imagenes AI religiosas gratis.jpg" },
+  { name: "Bishop Florence Mutasa", title: "Bishop", church: "Victory Bible Church", city: "Bulawayo", phone: "+263 773 200 002", email: "bishop.f@victory.co.zw", bio: "Pioneering church leader dedicated to women empowerment and family ministry in the Matabeleland region.", image: "Imagenes AI religiosas gratis (1).jpg" },
+  { name: "Pastor David Moyo", title: "Lead Pastor", church: "Living Waters Ministries", city: "Mutare", phone: "+263 774 300 003", email: "pastor.d@livingwaters.co.zw", bio: "Anointed teacher and evangelist with a heart for reaching the Eastern Highlands communities.", image: "10.jpg" },
+  { name: "Reverend Sarah Ncube", title: "Reverend", church: "Christ Embassy Harare", city: "Harare", phone: "+263 775 400 004", email: "rev.s@christembassy.co.zw", bio: "Known for powerful worship ministry and discipleship programmes across Harare.", image: "Christian Group Prayer – African Faith, Unity & Spiritual Growth Inspiration.jpg" },
+  { name: "Pastor Joseph Nyathi", title: "Founder & Pastor", church: "Abundant Life Church", city: "Gweru", phone: "+263 776 500 005", email: "pastor.j@abundant.co.zw", bio: "Church planter and author. Founded 5 congregations across the Midlands province.", image: "download.jpg" },
+  { name: "Apostle Grace Mlambo", title: "Apostle", church: "Faith World Ministries", city: "Masvingo", phone: "+263 777 600 006", email: "apostle.g@faithworld.co.zw", bio: "Prophetic voice in the Southern region. Active in humanitarian work and community development.", image: "Jesus Banner.jpg" },
 ]
 
 export default function PastorsPage() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-[100dvh] flex-col">
       <Navbar />
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         <PageHeader
           badge="Pastors"
           title="Pastors Directory"
@@ -25,7 +26,7 @@ export default function PastorsPage() {
 
         <section className="mx-auto max-w-7xl px-4 py-12">
           {/* Search */}
-          <div className="mb-8 flex flex-col gap-4 rounded-2xl border border-[#E8E0D0] bg-[#FFFFFF] p-6 shadow-sm md:flex-row">
+          <div className="mb-8 flex flex-col gap-4 rounded-2xl border border-[#E8E0D0] bg-[#FFFFFF] p-6 shadow-brand-sm md:flex-row">
             <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#7A5A6D]" />
               <input
@@ -39,29 +40,40 @@ export default function PastorsPage() {
           {/* Pastors grid */}
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {pastors.map((pastor) => (
-              <div key={pastor.name} className="group rounded-2xl border border-[#E8E0D0] bg-[#FFFFFF] p-6 shadow-sm transition-all hover:shadow-lg hover:border-[#D4AF37]/50">
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-[#551839] to-[#7A2A5E]">
-                  <span className="font-serif text-xl font-bold text-[#D4AF37]">{pastor.name.split(" ").slice(-1)[0][0]}</span>
+              <div key={pastor.name} className="group overflow-hidden rounded-2xl border border-[#E8E0D0] bg-[#FFFFFF] shadow-brand-sm transition-all hover:shadow-brand-lg hover:border-[#D4AF37]/50">
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src={encodeURI(`/images/${pastor.image}`)}
+                    alt={pastor.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#2F0B20]/70 to-transparent" />
+                  <div className="absolute bottom-3 left-4">
+                    <h3 className="font-serif text-lg font-bold text-[#FFFDF7]">{pastor.name}</h3>
+                    <span className="mt-1 inline-block rounded-full bg-[#D4AF37]/20 px-3 py-0.5 text-xs font-semibold text-[#D4AF37] backdrop-blur-sm">{pastor.title}</span>
+                  </div>
                 </div>
-                <h3 className="font-serif text-lg font-bold text-[#2F0B20]">{pastor.name}</h3>
-                <span className="mt-1 inline-block rounded-full bg-[#D4AF37]/10 px-3 py-0.5 text-xs font-semibold text-[#D4AF37]">{pastor.title}</span>
-                <p className="mt-3 text-sm text-[#7A5A6D] leading-relaxed">{pastor.bio}</p>
-                <div className="mt-4 flex flex-col gap-2 border-t border-[#F0EBE0] pt-4">
-                  <div className="flex items-center gap-2 text-sm text-[#7A5A6D]">
-                    <BookOpen className="h-4 w-4 text-[#D4AF37]" />
-                    {pastor.church}
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-[#7A5A6D]">
-                    <MapPin className="h-4 w-4 text-[#D4AF37]" />
-                    {pastor.city}
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-[#7A5A6D]">
-                    <Phone className="h-4 w-4 text-[#D4AF37]" />
-                    {pastor.phone}
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-[#7A5A6D]">
-                    <Mail className="h-4 w-4 text-[#D4AF37]" />
-                    {pastor.email}
+                <div className="p-6">
+                  <p className="text-sm text-[#7A5A6D] leading-relaxed">{pastor.bio}</p>
+                  <div className="mt-4 flex flex-col gap-2 border-t border-[#F0EBE0] pt-4">
+                    <div className="flex items-center gap-2 text-sm text-[#7A5A6D]">
+                      <BookOpen className="h-4 w-4 text-[#D4AF37]" />
+                      {pastor.church}
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-[#7A5A6D]">
+                      <MapPin className="h-4 w-4 text-[#D4AF37]" />
+                      {pastor.city}
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-[#7A5A6D]">
+                      <Phone className="h-4 w-4 text-[#D4AF37]" />
+                      {pastor.phone}
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-[#7A5A6D]">
+                      <Mail className="h-4 w-4 text-[#D4AF37]" />
+                      {pastor.email}
+                    </div>
                   </div>
                 </div>
               </div>

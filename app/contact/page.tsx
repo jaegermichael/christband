@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import { Footer } from "@/components/footer"
 import { Navbar } from "@/components/navbar"
 import { SideButtons } from "@/components/side-buttons"
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-[#FFFDF7] text-[#2F0B20]">
+    <div className="flex min-h-[100dvh] flex-col bg-[#FFFDF7] text-[#2F0B20]">
       <Navbar />
 
       <main className="flex-1">
@@ -25,11 +26,13 @@ export default function ContactPage() {
         </section>
 
         <section className="mx-auto max-w-6xl px-4 py-10">
-          <div className="overflow-hidden rounded-[2rem] border border-[#E8E0D0] bg-[#FFFFFF] shadow-sm">
-            <img
+          <div className="relative h-72 overflow-hidden rounded-[2rem] border border-[#E8E0D0] bg-[#FFFFFF] shadow-brand-sm sm:h-96">
+            <Image
               src={encodeURI("/images/St Francis Church ⛪  Sri Lanka.jpg")}
               alt="Church interior with worshippers"
-              className="h-72 w-full object-cover sm:h-96"
+              fill
+              sizes="100vw"
+              className="object-cover"
             />
           </div>
         </section>

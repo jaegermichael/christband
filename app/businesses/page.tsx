@@ -1,32 +1,33 @@
+import Image from "next/image"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { PageHeader } from "@/components/page-header"
 import { Search, MapPin, Phone, Star, Megaphone, ExternalLink } from "lucide-react"
 
 const businesses = [
-  { name: "Faith Print Solutions", category: "Printing & Publishing", city: "Harare", phone: "+263 242 750 111", rating: 4.8, description: "Christian publishing, church bulletins, event banners, and faith-based stationery.", featured: true },
-  { name: "Shalom Catering Services", category: "Catering", city: "Bulawayo", phone: "+263 292 400 222", rating: 4.7, description: "Quality catering for church events, weddings, conferences, and fellowship gatherings.", featured: true },
-  { name: "Kingdom Auto Repairs", category: "Automotive", city: "Harare", phone: "+263 772 333 444", rating: 4.5, description: "Trusted auto repair service run by a Spirit-filled team. Honest pricing guaranteed.", featured: false },
-  { name: "Blessed Hands Salon", category: "Beauty & Wellness", city: "Mutare", phone: "+263 774 555 666", rating: 4.9, description: "Professional beauty services in a Christ-centred atmosphere. Bridal packages available.", featured: false },
-  { name: "Emmanuel Legal Consultants", category: "Legal Services", city: "Harare", phone: "+263 242 800 777", rating: 4.6, description: "Christian lawyers providing wills, property transfers, and business registration services.", featured: true },
-  { name: "Zion Travels & Tours", category: "Travel", city: "Harare", phone: "+263 242 900 888", rating: 4.8, description: "Holy Land tours, church retreats, conference travel, and pilgrimage packages.", featured: false },
-  { name: "Grace IT Solutions", category: "Technology", city: "Harare", phone: "+263 773 111 222", rating: 4.7, description: "Website design, church management software, and IT support for ministries.", featured: false },
-  { name: "Covenant Construction", category: "Construction", city: "Bulawayo", phone: "+263 292 300 999", rating: 4.5, description: "Church building projects, renovations, and community facility construction.", featured: false },
+  { name: "Faith Print Solutions", category: "Printing & Publishing", city: "Harare", phone: "+263 242 750 111", rating: 4.8, description: "Christian publishing, church bulletins, event banners, and faith-based stationery.", featured: true, image: "download.jpg" },
+  { name: "Shalom Catering Services", category: "Catering", city: "Bulawayo", phone: "+263 292 400 222", rating: 4.7, description: "Quality catering for church events, weddings, conferences, and fellowship gatherings.", featured: true, image: "Imagenes AI religiosas gratis.jpg" },
+  { name: "Kingdom Auto Repairs", category: "Automotive", city: "Harare", phone: "+263 772 333 444", rating: 4.5, description: "Trusted auto repair service run by a Spirit-filled team. Honest pricing guaranteed.", featured: false, image: "10.jpg" },
+  { name: "Blessed Hands Salon", category: "Beauty & Wellness", city: "Mutare", phone: "+263 774 555 666", rating: 4.9, description: "Professional beauty services in a Christ-centred atmosphere. Bridal packages available.", featured: false, image: "Imagenes AI religiosas gratis (1).jpg" },
+  { name: "Emmanuel Legal Consultants", category: "Legal Services", city: "Harare", phone: "+263 242 800 777", rating: 4.6, description: "Christian lawyers providing wills, property transfers, and business registration services.", featured: true, image: "download (1).jpg" },
+  { name: "Zion Travels & Tours", category: "Travel", city: "Harare", phone: "+263 242 900 888", rating: 4.8, description: "Holy Land tours, church retreats, conference travel, and pilgrimage packages.", featured: false, image: "St Francis Church ⛪  Sri Lanka.jpg" },
+  { name: "Grace IT Solutions", category: "Technology", city: "Harare", phone: "+263 773 111 222", rating: 4.7, description: "Website design, church management software, and IT support for ministries.", featured: false, image: "download (2).jpg" },
+  { name: "Covenant Construction", category: "Construction", city: "Bulawayo", phone: "+263 292 300 999", rating: 4.5, description: "Church building projects, renovations, and community facility construction.", featured: false, image: "Welcome background.jpg" },
 ]
 
 const adverts = [
-  { title: "Grand Opening: Faith Print Harare East", business: "Faith Print Solutions", description: "New branch now open! 20% off all church printing orders this month. Visit us at Eastgate Mall, Harare.", cta: "Visit Us" },
-  { title: "Wedding Season Special", business: "Shalom Catering Services", description: "Book your church wedding catering before March and receive a free dessert table. Serving Bulawayo and surrounds.", cta: "Book Now" },
-  { title: "Holy Land Tour 2026", business: "Zion Travels & Tours", description: "Join our 10-day Holy Land tour in September. Walk where Jesus walked. Early bird prices available now.", cta: "Learn More" },
+  { title: "Grand Opening: Faith Print Harare East", business: "Faith Print Solutions", description: "New branch now open! 20% off all church printing orders this month. Visit us at Eastgate Mall, Harare.", cta: "Visit Us", image: "download.jpg" },
+  { title: "Wedding Season Special", business: "Shalom Catering Services", description: "Book your church wedding catering before March and receive a free dessert table. Serving Bulawayo and surrounds.", cta: "Book Now", image: "Imagenes AI religiosas gratis.jpg" },
+  { title: "Holy Land Tour 2026", business: "Zion Travels & Tours", description: "Join our 10-day Holy Land tour in September. Walk where Jesus walked. Early bird prices available now.", cta: "Learn More", image: "St Francis Church ⛪  Sri Lanka.jpg" },
 ]
 
 const categories = ["All", "Printing & Publishing", "Catering", "Automotive", "Beauty & Wellness", "Legal Services", "Travel", "Technology", "Construction"]
 
 export default function BusinessesPage() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-[100dvh] flex-col">
       <Navbar />
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         <PageHeader
           badge="Business"
           title="Christian Businesses"
@@ -35,7 +36,7 @@ export default function BusinessesPage() {
 
         <section className="mx-auto max-w-7xl px-4 py-12">
           {/* Search & filters */}
-          <div className="mb-8 flex flex-col gap-4 rounded-2xl border border-[#E8E0D0] bg-[#FFFFFF] p-6 shadow-sm md:flex-row">
+          <div className="mb-8 flex flex-col gap-4 rounded-2xl border border-[#E8E0D0] bg-[#FFFFFF] p-6 shadow-brand-sm md:flex-row">
             <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#7A5A6D]" />
               <input type="text" placeholder="Search businesses..." className="w-full rounded-xl border border-[#E8E0D0] bg-[#F5F0E8] py-2.5 pl-10 pr-4 text-sm text-[#2F0B20] placeholder:text-[#7A5A6D] outline-none focus:border-[#551839] focus:ring-1 focus:ring-[#551839]" />
@@ -48,25 +49,39 @@ export default function BusinessesPage() {
           {/* Business directory */}
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {businesses.map((biz) => (
-              <div key={biz.name} className="group relative rounded-2xl border border-[#E8E0D0] bg-[#FFFFFF] p-6 shadow-sm transition-all hover:shadow-lg hover:border-[#D4AF37]/50">
-                {biz.featured && (
-                  <span className="absolute right-4 top-4 rounded-full bg-[#D4AF37]/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase text-[#D4AF37]">Featured</span>
-                )}
-                <h3 className="font-serif text-lg font-bold text-[#2F0B20]">{biz.name}</h3>
-                <span className="mt-1 inline-block rounded-full bg-[#551839]/10 px-3 py-0.5 text-xs font-medium text-[#551839]">{biz.category}</span>
-                <p className="mt-3 text-sm text-[#7A5A6D] leading-relaxed">{biz.description}</p>
-                <div className="mt-4 flex flex-wrap gap-3 border-t border-[#F0EBE0] pt-4">
-                  <div className="flex items-center gap-1.5 text-sm text-[#7A5A6D]">
-                    <MapPin className="h-3.5 w-3.5 text-[#D4AF37]" />
-                    {biz.city}
+              <div key={biz.name} className="group overflow-hidden rounded-2xl border border-[#E8E0D0] bg-[#FFFFFF] shadow-brand-sm transition-all hover:shadow-brand-lg hover:border-[#D4AF37]/50">
+                <div className="relative h-40 overflow-hidden">
+                  <Image
+                    src={encodeURI(`/images/${biz.image}`)}
+                    alt={biz.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#2F0B20]/60 to-transparent" />
+                  {biz.featured && (
+                    <span className="absolute right-3 top-3 rounded-full bg-[#D4AF37] px-2.5 py-0.5 text-[10px] font-semibold uppercase text-[#2F0B20]">Featured</span>
+                  )}
+                  <div className="absolute bottom-3 left-4">
+                    <h3 className="font-serif text-lg font-bold text-[#FFFDF7]">{biz.name}</h3>
+                    <span className="mt-1 inline-block rounded-full bg-[#FFFDF7]/20 px-3 py-0.5 text-xs font-medium text-[#FFFDF7] backdrop-blur-sm">{biz.category}</span>
                   </div>
-                  <div className="flex items-center gap-1.5 text-sm text-[#7A5A6D]">
-                    <Phone className="h-3.5 w-3.5 text-[#D4AF37]" />
-                    {biz.phone}
-                  </div>
-                  <div className="flex items-center gap-1.5 text-sm text-[#D4AF37]">
-                    <Star className="h-3.5 w-3.5 fill-[#D4AF37]" />
-                    {biz.rating}
+                </div>
+                <div className="p-6">
+                  <p className="text-sm text-[#7A5A6D] leading-relaxed">{biz.description}</p>
+                  <div className="mt-4 flex flex-wrap gap-3 border-t border-[#F0EBE0] pt-4">
+                    <div className="flex items-center gap-1.5 text-sm text-[#7A5A6D]">
+                      <MapPin className="h-3.5 w-3.5 text-[#D4AF37]" />
+                      {biz.city}
+                    </div>
+                    <div className="flex items-center gap-1.5 text-sm text-[#7A5A6D]">
+                      <Phone className="h-3.5 w-3.5 text-[#D4AF37]" />
+                      {biz.phone}
+                    </div>
+                    <div className="flex items-center gap-1.5 text-sm text-[#D4AF37]">
+                      <Star className="h-3.5 w-3.5 fill-[#D4AF37]" />
+                      {biz.rating}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -87,14 +102,26 @@ export default function BusinessesPage() {
 
             <div className="grid gap-5 md:grid-cols-3">
               {adverts.map((ad) => (
-                <div key={ad.title} className="rounded-2xl border-2 border-[#D4AF37]/30 bg-gradient-to-br from-[#FFFDF7] to-[#F5F0E8] p-6 shadow-sm">
-                  <span className="mb-2 inline-block rounded-full bg-[#D4AF37]/10 px-3 py-0.5 text-xs font-semibold uppercase text-[#D4AF37]">Advert</span>
-                  <h3 className="font-serif text-lg font-bold text-[#2F0B20]">{ad.title}</h3>
-                  <p className="mt-1 text-xs font-medium text-[#551839]">{ad.business}</p>
-                  <p className="mt-3 text-sm text-[#7A5A6D] leading-relaxed">{ad.description}</p>
-                  <button className="mt-4 flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-[#551839] to-[#7A2A5E] px-5 py-2 text-sm font-medium text-[#FFFDF7] transition-all hover:brightness-110">
-                    {ad.cta} <ExternalLink className="h-3.5 w-3.5" />
-                  </button>
+                <div key={ad.title} className="group overflow-hidden rounded-2xl border-2 border-[#D4AF37]/30 bg-gradient-to-br from-[#FFFDF7] to-[#F5F0E8] shadow-brand-sm">
+                  <div className="relative h-36 overflow-hidden">
+                    <Image
+                      src={encodeURI(`/images/${ad.image}`)}
+                      alt={ad.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#2F0B20]/50 to-transparent" />
+                    <span className="absolute bottom-3 left-3 rounded-full bg-[#D4AF37] px-3 py-0.5 text-xs font-semibold uppercase text-[#2F0B20]">Advert</span>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="font-serif text-lg font-bold text-[#2F0B20]">{ad.title}</h3>
+                    <p className="mt-1 text-xs font-medium text-[#551839]">{ad.business}</p>
+                    <p className="mt-3 text-sm text-[#7A5A6D] leading-relaxed">{ad.description}</p>
+                    <button className="mt-4 flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-[#551839] to-[#7A2A5E] px-5 py-2 text-sm font-medium text-[#FFFDF7] transition-all hover:brightness-110 active:scale-[0.98]">
+                      {ad.cta} <ExternalLink className="h-3.5 w-3.5" />
+                    </button>
+                  </div>
                 </div>
               ))}
             </div>

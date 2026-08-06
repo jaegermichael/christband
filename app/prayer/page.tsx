@@ -21,9 +21,9 @@ export default function PrayerPage() {
   const [formData, setFormData] = useState({ name: "", city: "", request: "", anonymous: false })
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-[100dvh] flex-col">
       <Navbar />
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         <PageHeader
           badge="Prayer"
           title="Prayer Corner"
@@ -34,7 +34,7 @@ export default function PrayerPage() {
           <div className="grid gap-10 lg:grid-cols-3">
             {/* Submit form */}
             <div className="lg:col-span-1">
-              <div className="sticky top-28 rounded-2xl border border-[#E8E0D0] bg-[#FFFFFF] p-6 shadow-sm">
+              <div className="sticky top-28 rounded-2xl border border-[#E8E0D0] bg-[#FFFFFF] p-6 shadow-brand-sm">
                 <div className="mb-5 flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#551839] to-[#7A2A5E]">
                     <Send className="h-5 w-5 text-[#D4AF37]" />
@@ -90,7 +90,7 @@ export default function PrayerPage() {
                   </label>
                   <button
                     type="submit"
-                    className="w-full rounded-xl bg-gradient-to-r from-[#551839] to-[#7A2A5E] py-3 text-sm font-semibold text-[#FFFDF7] transition-all hover:brightness-110"
+                    className="w-full rounded-xl bg-gradient-to-r from-[#551839] to-[#7A2A5E] py-3 text-sm font-semibold text-[#FFFDF7] transition-all hover:brightness-110 active:scale-[0.98]"
                   >
                     Submit Prayer Request
                   </button>
@@ -106,7 +106,7 @@ export default function PrayerPage() {
               </h2>
               <div className="flex flex-col gap-4">
                 {prayerRequests.map((prayer, i) => (
-                  <div key={i} className="rounded-2xl border border-[#E8E0D0] bg-[#FFFFFF] p-5 shadow-sm transition-all hover:shadow-md">
+                  <div key={i} className="rounded-2xl border border-[#E8E0D0] bg-[#FFFFFF] p-5 shadow-brand-sm transition-all hover:shadow-brand">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#551839]/10">
@@ -124,7 +124,7 @@ export default function PrayerPage() {
                     </div>
                     <p className="mt-3 text-sm text-[#7A5A6D] leading-relaxed">{prayer.request}</p>
                     <div className="mt-3 flex items-center justify-between border-t border-[#F0EBE0] pt-3">
-                      <button className="flex items-center gap-1.5 text-sm text-[#551839] transition-colors hover:text-[#D4AF37]">
+                      <button className="flex items-center gap-1.5 text-sm text-[#551839] transition-colors hover:text-[#D4AF37] active:scale-[0.98]">
                         <Heart className="h-4 w-4" />
                         Pray ({prayer.prayers})
                       </button>

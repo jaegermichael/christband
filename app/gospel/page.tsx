@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import { Footer } from "@/components/footer"
 import { Navbar } from "@/components/navbar"
 import { SideButtons } from "@/components/side-buttons"
@@ -24,7 +25,7 @@ const imageCards = [
 
 export default function GospelMusicPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-[#FFFDF7] text-[#2F0B20]">
+    <div className="flex min-h-[100dvh] flex-col bg-[#FFFDF7] text-[#2F0B20]">
       <Navbar />
 
       <main className="flex-1">
@@ -60,7 +61,9 @@ export default function GospelMusicPage() {
               <div className="grid gap-4 sm:grid-cols-2">
                 {imageCards.map((image) => (
                   <div key={image.src} className="overflow-hidden rounded-3xl border border-white/10 bg-white/10 shadow-xl backdrop-blur-xl">
-                    <img src={image.src} alt={image.alt} className="h-full w-full object-cover" />
+                    <div className="relative h-48">
+                      <Image src={image.src} alt={image.alt} fill sizes="(max-width: 640px) 100vw, 50vw" className="object-cover" />
+                    </div>
                     <div className="border-t border-white/10 bg-[#00000066] px-4 py-3 text-sm text-[#F7E7D4]">
                       {image.caption}
                     </div>
