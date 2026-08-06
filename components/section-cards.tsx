@@ -22,6 +22,7 @@ const sections = [
     icon: Church,
     href: "/churches",
     color: "from-[#551839] to-[#7A2A5E]",
+    featured: true,
   },
   {
     title: "Pastors Directory",
@@ -50,6 +51,7 @@ const sections = [
     icon: CalendarDays,
     href: "/events",
     color: "from-[#551839] to-[#7A2A5E]",
+    featured: true,
   },
   {
     title: "Business Adverts",
@@ -110,6 +112,9 @@ const sections = [
 ]
 
 export function SectionCards() {
+  const featured = sections.filter((s) => s.featured)
+  const rest = sections.filter((s) => !s.featured)
+
   return (
     <section className="mx-auto max-w-7xl px-4 py-16">
       <div className="mb-12 text-center">
@@ -124,16 +129,47 @@ export function SectionCards() {
         </p>
       </div>
 
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {sections.map((section) => {
+      {/* Featured cards - asymmetric bento */}
+      <div className="mb-5 grid gap-5 md:grid-cols-2">
+        {featured.map((section) => {
           const Icon = section.icon
           return (
             <Link
               key={section.href + section.title}
               href={section.href}
-              className="group relative overflow-hidden rounded-2xl border border-[#E8E0D0] bg-[#FFFFFF] p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl hover:border-[#D4AF37]/50"
+              className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#551839] to-[#3B1027] p-8 shadow-brand-lg transition-all hover:-translate-y-1 hover:shadow-brand-xl active:scale-[0.99]"
             >
-              <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${section.color} shadow-md transition-transform group-hover:scale-110`}>
+              <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-[#D4AF37]/10" />
+              <div className="absolute -bottom-8 -left-8 h-24 w-24 rounded-full bg-[#D4AF37]/5" />
+              <div className="relative">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#D4AF37]/20">
+                  <Icon className="h-6 w-6 text-[#D4AF37]" />
+                </div>
+                <h3 className="mb-2 font-serif text-xl font-bold text-[#FFFDF7]">{section.title}</h3>
+                <p className="text-sm text-[#D8B9CB] leading-relaxed">{section.description}</p>
+                <span className="mt-4 inline-block text-sm font-semibold text-[#D4AF37]">
+                  Explore now →
+                </span>
+              </div>
+            </Link>
+          )
+        })}
+      </div>
+
+      {/* Rest of cards - varied grid */}
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {rest.map((section, i) => {
+          const Icon = section.icon
+          const isWide = i % 5 === 0
+          return (
+            <Link
+              key={section.href + section.title}
+              href={section.href}
+              className={`group relative overflow-hidden rounded-2xl border border-[#E8E0D0] bg-[#FFFFFF] p-6 shadow-brand-sm transition-all hover:-translate-y-1 hover:shadow-brand-lg hover:border-[#D4AF37]/50 active:scale-[0.99] ${
+                isWide ? "sm:col-span-2 lg:col-span-1" : ""
+              }`}
+            >
+              <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${section.color} shadow-brand-sm transition-transform group-hover:scale-110`}>
                 <Icon className="h-6 w-6 text-[#D4AF37]" />
               </div>
               <h3 className="mb-2 font-serif text-lg font-bold text-[#2F0B20]">{section.title}</h3>

@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { Cross, Heart, Globe } from "lucide-react"
 
 export function HomeAbout() {
@@ -13,17 +14,19 @@ export function HomeAbout() {
               Uniting the Body of Christ in Zimbabwe
             </h2>
             <p className="mt-4 text-[#7A5A6D] leading-relaxed">
-              Christbrand is Zimbabwe&apos;s premier Christian networking platform dedicated to connecting believers, churches, pastors, and Christian businesses across every province. We believe that when the Body of Christ is connected, communities are transformed and God&apos;s kingdom advances.
+              Christbrand is Zimbabwe's premier Christian networking platform dedicated to connecting believers, churches, pastors, and Christian businesses across every province. We believe that when the Body of Christ is connected, communities are transformed and God's kingdom advances.
             </p>
             <p className="mt-3 text-[#7A5A6D] leading-relaxed">
               From Harare to Bulawayo, Mutare to Masvingo, we are building bridges between congregations, fostering fellowship, and creating opportunities for believers to grow together in faith and purpose.
             </p>
           </div>
           <div className="grid gap-4">
-            <div className="overflow-hidden rounded-[2rem] border border-[#E8E0D0] bg-white shadow-lg">
-              <img
+            <div className="overflow-hidden rounded-[2rem] border border-[#E8E0D0] bg-white shadow-brand-lg">
+              <Image
                 src={encodeURI("/images/Christian Group Prayer – African Faith, Unity & Spiritual Growth Inspiration.jpg")}
                 alt="Church group gathered in prayer"
+                width={800}
+                height={400}
                 className="h-80 w-full object-cover"
               />
             </div>
@@ -36,7 +39,7 @@ export function HomeAbout() {
               ].map((item) => {
                 const Icon = item.icon
                 return (
-                  <div key={item.title} className="rounded-2xl border border-[#E8E0D0] bg-[#FFFFFF] p-5 shadow-sm">
+                  <div key={item.title} className="rounded-2xl border border-[#E8E0D0] bg-[#FFFFFF] p-5 shadow-brand-sm">
                     <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#551839] to-[#7A2A5E]">
                       <Icon className="h-5 w-5 text-[#D4AF37]" />
                     </div>

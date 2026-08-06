@@ -43,7 +43,7 @@ export function Navbar() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-1.5 text-xs">
           <span className="flex items-center gap-1.5">
             <Cross className="h-3 w-3 text-[#D4AF37]" />
-            Body of Christ Christian Networking — Zimbabwe
+            Body of Christ Christian Networking - Zimbabwe
           </span>
           <div className="hidden items-center gap-4 md:flex">
             <a href="tel:+263772000000" className="hover:text-[#D4AF37] transition-colors">+263 772 000 000</a>
@@ -79,7 +79,7 @@ export function Navbar() {
                   aria-haspopup="menu"
                   aria-expanded={openDropdown === link.label}
                   aria-controls={`dropdown-${link.label}`}
-                  className="flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-[#2F0B20] transition-colors hover:bg-[#F5F0E8] hover:text-[#551839]"
+                  className="flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-[#2F0B20] transition-colors hover:bg-[#F5F0E8] hover:text-[#551839] active:scale-[0.98]"
                 >
                   {link.label}
                   <ChevronDown className="h-3.5 w-3.5" />
@@ -102,7 +102,7 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-lg px-3 py-2 text-sm font-medium text-[#2F0B20] transition-colors hover:bg-[#F5F0E8] hover:text-[#551839]"
+                className="rounded-lg px-3 py-2 text-sm font-medium text-[#2F0B20] transition-colors hover:bg-[#F5F0E8] hover:text-[#551839] active:scale-[0.98]"
               >
                 {link.label}
               </Link>
@@ -114,13 +114,13 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <Link
             href="/membership"
-            className="hidden rounded-lg bg-gradient-to-r from-[#551839] to-[#7A2A5E] px-4 py-2 text-sm font-medium text-[#FFFDF7] shadow-md transition-all hover:shadow-lg hover:brightness-110 md:block"
+            className="hidden rounded-lg bg-gradient-to-r from-[#551839] to-[#7A2A5E] px-4 py-2 text-sm font-medium text-[#FFFDF7] shadow-brand transition-all hover:shadow-brand-lg hover:brightness-110 active:scale-[0.98] md:block"
           >
             Join Us
           </Link>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="rounded-lg p-2 text-[#551839] transition-colors hover:bg-[#F5F0E8] lg:hidden"
+            className="rounded-lg p-2 text-[#551839] transition-colors hover:bg-[#F5F0E8] active:scale-[0.98] lg:hidden"
             aria-label="Toggle navigation menu"
             aria-expanded={mobileOpen}
             aria-controls="mobile-menu"
@@ -175,7 +175,7 @@ export function Navbar() {
           <Link
             href="/membership"
             onClick={() => setMobileOpen(false)}
-            className="mt-3 block rounded-lg bg-gradient-to-r from-[#551839] to-[#7A2A5E] px-4 py-2.5 text-center text-sm font-medium text-[#FFFDF7] shadow-md"
+            className="mt-3 block rounded-lg bg-gradient-to-r from-[#551839] to-[#7A2A5E] px-4 py-2.5 text-center text-sm font-medium text-[#FFFDF7] shadow-brand active:scale-[0.98]"
           >
             Join Us
           </Link>

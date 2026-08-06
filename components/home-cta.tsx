@@ -15,13 +15,13 @@ export function HomeCTA() {
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="/membership"
-              className="flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#C49B2F] px-7 py-3 font-semibold text-[#2F0B20] shadow-lg transition-all hover:brightness-110"
+              className="flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#C49B2F] px-7 py-3 font-semibold text-[#2F0B20] shadow-brand-lg transition-all hover:brightness-110 active:scale-[0.98]"
             >
               Register Now <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               href="/subscriptions"
-              className="flex items-center gap-2 rounded-xl border border-[#D4AF37]/30 px-7 py-3 font-semibold text-[#D4AF37] transition-all hover:bg-[#D4AF37]/10"
+              className="flex items-center gap-2 rounded-xl border border-[#D4AF37]/30 px-7 py-3 font-semibold text-[#D4AF37] transition-all hover:bg-[#D4AF37]/10 active:scale-[0.98]"
             >
               View Plans
             </Link>

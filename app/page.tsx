@@ -9,10 +9,10 @@ import { SideButtons } from "@/components/side-buttons"
 
 export default function HomePage() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-[100dvh] flex-col">
       <Navbar />
       <HomeAds />
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         <Hero />
         <SectionCards />
         <HomeAbout />

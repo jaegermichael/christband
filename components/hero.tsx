@@ -1,13 +1,17 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Search, ArrowRight, Cross } from "lucide-react"
 
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-[#551839] via-[#3B1027] to-[#2F0B20]">
-      <img
+      <Image
         src={encodeURI("/images/Welcome background.jpg")}
         alt="Church community worship background"
-        className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover opacity-20"
+        fill
+        priority
+        sizes="100vw"
+        className="pointer-events-none absolute inset-0 -z-10 object-cover opacity-20"
         aria-hidden="true"
       />
       {/* Decorative elements */}
@@ -22,7 +26,7 @@ export function Hero() {
         <div className="mb-6 flex items-center gap-2 rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-4 py-1.5">
           <Cross className="h-3.5 w-3.5 text-[#D4AF37]" />
           <span className="text-xs font-semibold uppercase tracking-widest text-[#D4AF37]">
-            Zimbabwe&apos;s Christian Network
+            Zimbabwe's Christian Network
           </span>
         </div>
 
@@ -46,7 +50,7 @@ export function Hero() {
             placeholder="Search churches, pastors, events..."
             className="flex-1 bg-transparent px-3 py-2.5 text-sm text-[#FFFDF7] placeholder:text-[#D8B9CB] outline-none"
           />
-          <button type="submit" className="rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#C49B2F] px-5 py-2.5 text-sm font-semibold text-[#2F0B20] transition-all hover:brightness-110">
+          <button type="submit" className="rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#C49B2F] px-5 py-2.5 text-sm font-semibold text-[#2F0B20] transition-all hover:brightness-110 active:scale-[0.98]">
             Search
           </button>
         </form>
@@ -55,19 +59,19 @@ export function Hero() {
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <Link
             href="/churches"
-            className="flex items-center gap-1.5 rounded-full border border-[#D4AF37]/20 bg-[#D4AF37]/10 px-4 py-2 text-sm text-[#D4AF37] transition-colors hover:bg-[#D4AF37]/20"
+            className="flex items-center gap-1.5 rounded-full border border-[#D4AF37]/20 bg-[#D4AF37]/10 px-4 py-2 text-sm text-[#D4AF37] transition-colors hover:bg-[#D4AF37]/20 active:scale-[0.98]"
           >
             Find a Church <ArrowRight className="h-3.5 w-3.5" />
           </Link>
           <Link
             href="/events"
-            className="flex items-center gap-1.5 rounded-full border border-[#FFFDF7]/20 bg-[#FFFDF7]/10 px-4 py-2 text-sm text-[#FFFDF7] transition-colors hover:bg-[#FFFDF7]/20"
+            className="flex items-center gap-1.5 rounded-full border border-[#FFFDF7]/20 bg-[#FFFDF7]/10 px-4 py-2 text-sm text-[#FFFDF7] transition-colors hover:bg-[#FFFDF7]/20 active:scale-[0.98]"
           >
             Upcoming Events <ArrowRight className="h-3.5 w-3.5" />
           </Link>
           <Link
             href="/prayer"
-            className="flex items-center gap-1.5 rounded-full border border-[#FFFDF7]/20 bg-[#FFFDF7]/10 px-4 py-2 text-sm text-[#FFFDF7] transition-colors hover:bg-[#FFFDF7]/20"
+            className="flex items-center gap-1.5 rounded-full border border-[#FFFDF7]/20 bg-[#FFFDF7]/10 px-4 py-2 text-sm text-[#FFFDF7] transition-colors hover:bg-[#FFFDF7]/20 active:scale-[0.98]"
           >
             Prayer Requests <ArrowRight className="h-3.5 w-3.5" />
           </Link>
@@ -76,10 +80,10 @@ export function Hero() {
         {/* Stats */}
         <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4">
           {[
-            { value: "500+", label: "Churches Listed" },
-            { value: "200+", label: "Pastors Connected" },
-            { value: "150+", label: "Christian Businesses" },
-            { value: "1,000+", label: "Active Members" },
+            { value: "523", label: "Churches Listed" },
+            { value: "217", label: "Pastors Connected" },
+            { value: "148", label: "Christian Businesses" },
+            { value: "1,204", label: "Active Members" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="font-serif text-2xl font-bold text-[#D4AF37] md:text-3xl">{stat.value}</div>

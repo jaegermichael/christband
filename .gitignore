@@ -14,3 +14,7 @@ tsconfig.tsbuildinfo
 .DS_Store
 
 .vercel
+
+# Local agent config
+.agents/
+.claude/
