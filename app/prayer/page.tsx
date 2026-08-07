@@ -34,33 +34,33 @@ export default function PrayerPage() {
           <div className="grid gap-10 lg:grid-cols-3">
             {/* Submit form */}
             <div className="lg:col-span-1">
-              <div className="sticky top-28 rounded-2xl border border-[#E8E0D0] bg-[#FFFFFF] p-6 shadow-brand-sm">
+              <div className="sticky top-28 rounded-2xl border border-border bg-card/50 p-6 shadow-brand-sm">
                 <div className="mb-5 flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#551839] to-[#7A2A5E]">
-                    <Send className="h-5 w-5 text-[#D4AF37]" />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-secondary">
+                    <Send className="h-5 w-5 text-primary-foreground" />
                   </div>
-                  <h2 className="font-serif text-xl font-bold text-[#2F0B20]">Submit a Prayer</h2>
+                  <h2 className="font-serif text-xl font-bold text-foreground">Submit a Prayer</h2>
                 </div>
 
                 <form className="flex flex-col gap-4" onSubmit={(e) => e.preventDefault()}>
                   <div>
-                    <label htmlFor="prayer-name" className="mb-1 block text-sm font-medium text-[#2F0B20]">Your Name</label>
+                    <label htmlFor="prayer-name" className="mb-1 block text-sm font-medium text-foreground">Your Name</label>
                     <input
                       id="prayer-name"
                       type="text"
                       placeholder="Enter your name"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full rounded-xl border border-[#E8E0D0] bg-[#F5F0E8] px-4 py-2.5 text-sm text-[#2F0B20] placeholder:text-[#7A5A6D] outline-none focus:border-[#551839] focus:ring-1 focus:ring-[#551839]"
+                      className="w-full rounded-xl border border-input bg-background/50 px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground outline-none focus:border-primary focus:ring-1 focus:ring-primary"
                     />
                   </div>
                   <div>
-                    <label htmlFor="prayer-city" className="mb-1 block text-sm font-medium text-[#2F0B20]">City</label>
+                    <label htmlFor="prayer-city" className="mb-1 block text-sm font-medium text-foreground">City</label>
                     <select
                       id="prayer-city"
                       value={formData.city}
                       onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                      className="w-full rounded-xl border border-[#E8E0D0] bg-[#F5F0E8] px-4 py-2.5 text-sm text-[#2F0B20] outline-none focus:border-[#551839]"
+                      className="w-full rounded-xl border border-input bg-background/50 px-4 py-2.5 text-sm text-foreground outline-none focus:border-primary"
                     >
                       <option value="">Select city</option>
                       {["Harare", "Bulawayo", "Mutare", "Gweru", "Masvingo", "Kwekwe", "Chinhoyi", "Marondera", "Kadoma", "Bindura"].map((c) => (
@@ -69,28 +69,28 @@ export default function PrayerPage() {
                     </select>
                   </div>
                   <div>
-                    <label htmlFor="prayer-request" className="mb-1 block text-sm font-medium text-[#2F0B20]">Prayer Request</label>
+                    <label htmlFor="prayer-request" className="mb-1 block text-sm font-medium text-foreground">Prayer Request</label>
                     <textarea
                       id="prayer-request"
                       rows={4}
                       placeholder="Share your prayer request here..."
                       value={formData.request}
                       onChange={(e) => setFormData({ ...formData, request: e.target.value })}
-                      className="w-full rounded-xl border border-[#E8E0D0] bg-[#F5F0E8] px-4 py-2.5 text-sm text-[#2F0B20] placeholder:text-[#7A5A6D] outline-none focus:border-[#551839] focus:ring-1 focus:ring-[#551839] resize-none"
+                      className="w-full rounded-xl border border-input bg-background/50 px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground outline-none focus:border-primary focus:ring-1 focus:ring-primary resize-none"
                     />
                   </div>
-                  <label className="flex items-center gap-2 text-sm text-[#7A5A6D]">
+                  <label className="flex items-center gap-2 text-sm text-muted-foreground">
                     <input
                       type="checkbox"
                       checked={formData.anonymous}
                       onChange={(e) => setFormData({ ...formData, anonymous: e.target.checked })}
-                      className="rounded border-[#E8E0D0] text-[#551839] focus:ring-[#551839]"
+                      className="rounded border-input text-primary focus:ring-primary"
                     />
                     Post anonymously
                   </label>
                   <button
                     type="submit"
-                    className="w-full rounded-xl bg-gradient-to-r from-[#551839] to-[#7A2A5E] py-3 text-sm font-semibold text-[#FFFDF7] transition-all hover:brightness-110 active:scale-[0.98]"
+                    className="w-full rounded-xl bg-gradient-to-r from-primary to-secondary py-3 text-sm font-semibold text-primary-foreground transition-all hover:brightness-110 active:scale-[0.98]"
                   >
                     Submit Prayer Request
                   </button>
@@ -100,35 +100,35 @@ export default function PrayerPage() {
 
             {/* Prayer wall */}
             <div className="lg:col-span-2">
-              <h2 className="mb-6 flex items-center gap-3 font-serif text-2xl font-bold text-[#2F0B20]">
-                <HandHeart className="h-6 w-6 text-[#D4AF37]" />
+              <h2 className="mb-6 flex items-center gap-3 font-serif text-2xl font-bold text-foreground">
+                <HandHeart className="h-6 w-6 text-secondary" />
                 Prayer Wall
               </h2>
               <div className="flex flex-col gap-4">
                 {prayerRequests.map((prayer, i) => (
-                  <div key={i} className="rounded-2xl border border-[#E8E0D0] bg-[#FFFFFF] p-5 shadow-brand-sm transition-all hover:shadow-brand">
+                  <div key={i} className="rounded-2xl border border-border bg-card/50 p-5 shadow-brand-sm transition-all hover:shadow-brand">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#551839]/10">
-                          <User className="h-4 w-4 text-[#551839]" />
+                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/20">
+                          <User className="h-4 w-4 text-secondary" />
                         </div>
                         <div>
-                          <span className="text-sm font-semibold text-[#2F0B20]">{prayer.name}</span>
-                          <span className="ml-2 text-xs text-[#7A5A6D]">{prayer.city}</span>
+                          <span className="text-sm font-semibold text-foreground">{prayer.name}</span>
+                          <span className="ml-2 text-xs text-muted-foreground">{prayer.city}</span>
                         </div>
                       </div>
-                      <div className="flex items-center gap-1 text-xs text-[#7A5A6D]">
+                      <div className="flex items-center gap-1 text-xs text-muted-foreground">
                         <Clock className="h-3 w-3" />
                         {prayer.time}
                       </div>
                     </div>
-                    <p className="mt-3 text-sm text-[#7A5A6D] leading-relaxed">{prayer.request}</p>
-                    <div className="mt-3 flex items-center justify-between border-t border-[#F0EBE0] pt-3">
-                      <button className="flex items-center gap-1.5 text-sm text-[#551839] transition-colors hover:text-[#D4AF37] active:scale-[0.98]">
+                    <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{prayer.request}</p>
+                    <div className="mt-3 flex items-center justify-between border-t border-border pt-3">
+                      <button className="flex items-center gap-1.5 text-sm text-secondary transition-colors hover:text-primary active:scale-[0.98]">
                         <Heart className="h-4 w-4" />
                         Pray ({prayer.prayers})
                       </button>
-                      <span className="text-xs text-[#7A5A6D]">{prayer.prayers} people praying</span>
+                      <span className="text-xs text-muted-foreground">{prayer.prayers} people praying</span>
                     </div>
                   </div>
                 ))}

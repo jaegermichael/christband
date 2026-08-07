@@ -16,99 +16,19 @@ import {
 } from "lucide-react"
 
 const sections = [
-  {
-    title: "Church Directory",
-    description: "Find churches across Zimbabwe by denomination, city, or province.",
-    icon: Church,
-    href: "/churches",
-    color: "from-[#551839] to-[#7A2A5E]",
-    featured: true,
-  },
-  {
-    title: "Pastors Directory",
-    description: "Connect with pastors and spiritual leaders in your area.",
-    icon: Users,
-    href: "/pastors",
-    color: "from-[#3B1027] to-[#551839]",
-  },
-  {
-    title: "Church Organisations",
-    description: "Explore Christian organisations and ministries in Zimbabwe.",
-    icon: Building2,
-    href: "/organisations",
-    color: "from-[#551839] to-[#7A2A5E]",
-  },
-  {
-    title: "Christian Businesses",
-    description: "Support and discover businesses run by fellow believers.",
-    icon: Briefcase,
-    href: "/businesses",
-    color: "from-[#3B1027] to-[#551839]",
-  },
-  {
-    title: "Events Calendar",
-    description: "Stay updated with Christian events, conferences, and gatherings.",
-    icon: CalendarDays,
-    href: "/events",
-    color: "from-[#551839] to-[#7A2A5E]",
-    featured: true,
-  },
-  {
-    title: "Business Adverts",
-    description: "Advertise your Christian business to the faith community.",
-    icon: Megaphone,
-    href: "/businesses#adverts",
-    color: "from-[#3B1027] to-[#551839]",
-  },
-  {
-    title: "Christian Shop",
-    description: "Browse faith-inspired merchandise, books, and gifts.",
-    icon: ShoppingBag,
-    href: "/shop",
-    color: "from-[#551839] to-[#7A2A5E]",
-  },
-  {
-    title: "Prayer Corner",
-    description: "Share prayer requests and stand in faith with the community.",
-    icon: HandHeart,
-    href: "/prayer",
-    color: "from-[#3B1027] to-[#551839]",
-  },
-  {
-    title: "Word of Motivation",
-    description: "Daily devotionals and uplifting messages for your spiritual walk.",
-    icon: BookOpen,
-    href: "/devotionals",
-    color: "from-[#551839] to-[#7A2A5E]",
-  },
-  {
-    title: "Christian Books",
-    description: "Discover recommended books for growth and inspiration.",
-    icon: Library,
-    href: "/books",
-    color: "from-[#3B1027] to-[#551839]",
-  },
-  {
-    title: "Gospel Music",
-    description: "Enjoy worship playlists, choir performances, and music ministry resources.",
-    icon: Music,
-    href: "/gospel",
-    color: "from-[#551839] to-[#7A2A5E]",
-  },
-  {
-    title: "Membership",
-    description: "Register as a member and join the Christbrand family.",
-    icon: UserPlus,
-    href: "/membership",
-    color: "from-[#551839] to-[#7A2A5E]",
-  },
-  {
-    title: "Subscriptions",
-    description: "Choose a plan that suits you with local payment options.",
-    icon: CreditCard,
-    href: "/subscriptions",
-    color: "from-[#3B1027] to-[#551839]",
-  },
+  { title: "Church Directory", description: "Find churches across Zimbabwe by denomination, city, or province.", icon: Church, href: "/churches", color: "from-primary to-secondary", featured: true },
+  { title: "Pastors Directory", description: "Connect with pastors and spiritual leaders in your area.", icon: Users, href: "/pastors", color: "from-secondary to-primary" },
+  { title: "Church Organisations", description: "Explore Christian organisations and ministries in Zimbabwe.", icon: Building2, href: "/organisations", color: "from-primary to-secondary" },
+  { title: "Christian Businesses", description: "Support and discover businesses run by fellow believers.", icon: Briefcase, href: "/businesses", color: "from-secondary to-primary" },
+  { title: "Events Calendar", description: "Stay updated with Christian events, conferences, and gatherings.", icon: CalendarDays, href: "/events", color: "from-primary to-secondary", featured: true },
+  { title: "Business Adverts", description: "Advertise your Christian business to the faith community.", icon: Megaphone, href: "/businesses#adverts", color: "from-secondary to-primary" },
+  { title: "Christian Shop", description: "Browse faith-inspired merchandise, books, and gifts.", icon: ShoppingBag, href: "/shop", color: "from-primary to-secondary" },
+  { title: "Prayer Corner", description: "Share prayer requests and stand in faith with the community.", icon: HandHeart, href: "/prayer", color: "from-secondary to-primary" },
+  { title: "Word of Motivation", description: "Daily devotionals and uplifting messages for your spiritual walk.", icon: BookOpen, href: "/devotionals", color: "from-primary to-secondary" },
+  { title: "Christian Books", description: "Discover recommended books for growth and inspiration.", icon: Library, href: "/books", color: "from-secondary to-primary" },
+  { title: "Gospel Music", description: "Enjoy worship playlists, choir performances, and music ministry resources.", icon: Music, href: "/gospel", color: "from-primary to-secondary" },
+  { title: "Membership", description: "Register as a member and join the Christbrand family.", icon: UserPlus, href: "/membership", color: "from-primary to-secondary" },
+  { title: "Subscriptions", description: "Choose a plan that suits you with local payment options.", icon: CreditCard, href: "/subscriptions", color: "from-secondary to-primary" },
 ]
 
 export function SectionCards() {
@@ -118,13 +38,13 @@ export function SectionCards() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-16">
       <div className="mb-12 text-center">
-        <span className="mb-2 inline-block rounded-full bg-[#F5F0E8] px-4 py-1 text-xs font-semibold uppercase tracking-widest text-[#551839]">
+        <span className="mb-2 inline-block rounded-full bg-secondary/10 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-secondary">
           Explore
         </span>
-        <h2 className="font-serif text-3xl font-bold text-[#2F0B20] md:text-4xl text-balance">
+        <h2 className="font-serif text-3xl font-bold text-foreground md:text-4xl text-balance">
           Everything You Need In One Place
         </h2>
-        <p className="mx-auto mt-3 max-w-2xl text-[#7A5A6D] leading-relaxed">
+        <p className="mx-auto mt-3 max-w-2xl text-muted-foreground leading-relaxed">
           Christbrand connects the Body of Christ across Zimbabwe through 12 dedicated sections designed to strengthen our faith community.
         </p>
       </div>
@@ -137,17 +57,17 @@ export function SectionCards() {
             <Link
               key={section.href + section.title}
               href={section.href}
-              className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#551839] to-[#3B1027] p-8 shadow-brand-lg transition-all hover:-translate-y-1 hover:shadow-brand-xl active:scale-[0.99]"
+              className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary to-secondary p-8 shadow-brand-lg transition-all hover:-translate-y-1 hover:shadow-brand-xl active:scale-[0.99]"
             >
-              <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-[#D4AF37]/10" />
-              <div className="absolute -bottom-8 -left-8 h-24 w-24 rounded-full bg-[#D4AF37]/5" />
+              <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-background/10" />
+              <div className="absolute -bottom-8 -left-8 h-24 w-24 rounded-full bg-background/5" />
               <div className="relative">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#D4AF37]/20">
-                  <Icon className="h-6 w-6 text-[#D4AF37]" />
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-background/20">
+                  <Icon className="h-6 w-6 text-background" />
                 </div>
-                <h3 className="mb-2 font-serif text-xl font-bold text-[#FFFDF7]">{section.title}</h3>
-                <p className="text-sm text-[#D8B9CB] leading-relaxed">{section.description}</p>
-                <span className="mt-4 inline-block text-sm font-semibold text-[#D4AF37]">
+                <h3 className="mb-2 font-serif text-xl font-bold text-background">{section.title}</h3>
+                <p className="text-sm text-background/80 leading-relaxed">{section.description}</p>
+                <span className="mt-4 inline-block text-sm font-semibold text-background">
                   Explore now →
                 </span>
               </div>
@@ -165,16 +85,16 @@ export function SectionCards() {
             <Link
               key={section.href + section.title}
               href={section.href}
-              className={`group relative overflow-hidden rounded-2xl border border-[#E8E0D0] bg-[#FFFFFF] p-6 shadow-brand-sm transition-all hover:-translate-y-1 hover:shadow-brand-lg hover:border-[#D4AF37]/50 active:scale-[0.99] ${
+              className={`group relative overflow-hidden rounded-2xl border border-border bg-card/50 p-6 shadow-brand-sm transition-all hover:-translate-y-1 hover:shadow-brand-lg hover:border-secondary/50 active:scale-[0.99] ${
                 isWide ? "sm:col-span-2 lg:col-span-1" : ""
               }`}
             >
               <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${section.color} shadow-brand-sm transition-transform group-hover:scale-110`}>
-                <Icon className="h-6 w-6 text-[#D4AF37]" />
+                <Icon className="h-6 w-6 text-background" />
               </div>
-              <h3 className="mb-2 font-serif text-lg font-bold text-[#2F0B20]">{section.title}</h3>
-              <p className="text-sm text-[#7A5A6D] leading-relaxed">{section.description}</p>
-              <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-[#D4AF37] to-[#E8CC6A] transition-all group-hover:w-full" />
+              <h3 className="mb-2 font-serif text-lg font-bold text-foreground">{section.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{section.description}</p>
+              <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-primary to-secondary transition-all group-hover:w-full" />
             </Link>
           )
         })}

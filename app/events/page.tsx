@@ -32,12 +32,12 @@ export default function EventsPage() {
           <div className="mb-8 flex flex-wrap gap-3">
             <div className="flex flex-wrap gap-2">
               {categories.map((cat) => (
-                <button key={cat} className="rounded-full border border-[#E8E0D0] bg-[#FFFFFF] px-4 py-2 text-sm text-[#2F0B20] transition-all hover:border-[#D4AF37] hover:bg-[#D4AF37]/10 first:bg-[#551839] first:text-[#FFFDF7] first:border-[#551839]">
+                <button key={cat} className="rounded-full border border-border bg-card/50 px-4 py-2 text-sm text-foreground transition-all hover:border-secondary hover:bg-secondary/10 first:bg-primary first:text-primary-foreground first:border-primary">
                   {cat}
                 </button>
               ))}
             </div>
-            <select className="rounded-full border border-[#E8E0D0] bg-[#FFFFFF] px-4 py-2 text-sm text-[#2F0B20] outline-none">
+            <select className="rounded-full border border-border bg-card/50 px-4 py-2 text-sm text-foreground outline-none">
               {months.map((m) => <option key={m}>{m}</option>)}
             </select>
           </div>
@@ -49,7 +49,7 @@ export default function EventsPage() {
               const day = dateObj.getDate()
               const month = dateObj.toLocaleString("en", { month: "short" }).toUpperCase()
               return (
-                <div key={event.title} className="group overflow-hidden rounded-2xl border border-[#E8E0D0] bg-[#FFFFFF] shadow-brand-sm transition-all hover:shadow-brand-lg hover:border-[#D4AF37]/50">
+                <div key={event.title} className="group overflow-hidden rounded-2xl border border-border bg-card/50 shadow-brand-sm transition-all hover:shadow-brand-lg hover:border-secondary/50">
                   <div className="relative h-44 overflow-hidden">
                     <Image
                       src={encodeURI(`/images/${event.image}`)}
@@ -58,28 +58,28 @@ export default function EventsPage() {
                       sizes="(max-width: 1024px) 100vw, 50vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#2F0B20]/70 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/70 to-transparent" />
                     {/* Date badge */}
-                    <div className="absolute bottom-3 left-4 flex h-14 w-14 flex-col items-center justify-center rounded-xl bg-[#D4AF37] text-center shadow-brand">
-                      <span className="text-lg font-bold text-[#2F0B20] leading-none">{day}</span>
-                      <span className="text-[10px] font-semibold uppercase text-[#2F0B20]">{month}</span>
+                    <div className="absolute bottom-3 left-4 flex h-14 w-14 flex-col items-center justify-center rounded-xl bg-secondary text-center shadow-brand">
+                      <span className="text-lg font-bold text-background leading-none">{day}</span>
+                      <span className="text-[10px] font-semibold uppercase text-background">{month}</span>
                     </div>
-                    <span className="absolute bottom-3 right-4 rounded-full bg-[#FFFDF7]/20 px-2.5 py-0.5 text-[10px] font-semibold uppercase text-[#FFFDF7] backdrop-blur-sm">{event.category}</span>
+                    <span className="absolute bottom-3 right-4 rounded-full bg-background/20 px-2.5 py-0.5 text-[10px] font-semibold uppercase text-background backdrop-blur-sm">{event.category}</span>
                   </div>
                   <div className="p-6">
-                    <h3 className="font-serif text-lg font-bold text-[#2F0B20]">{event.title}</h3>
-                    <p className="mt-2 text-sm text-[#7A5A6D] leading-relaxed">{event.description}</p>
+                    <h3 className="font-serif text-lg font-bold text-foreground">{event.title}</h3>
+                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{event.description}</p>
                     <div className="mt-3 flex flex-wrap gap-4">
-                      <div className="flex items-center gap-1.5 text-xs text-[#7A5A6D]">
-                        <Clock className="h-3.5 w-3.5 text-[#D4AF37]" />
+                      <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                        <Clock className="h-3.5 w-3.5 text-secondary" />
                         {event.time}
                       </div>
-                      <div className="flex items-center gap-1.5 text-xs text-[#7A5A6D]">
-                        <MapPin className="h-3.5 w-3.5 text-[#D4AF37]" />
+                      <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                        <MapPin className="h-3.5 w-3.5 text-secondary" />
                         {event.location}
                       </div>
-                      <div className="flex items-center gap-1.5 text-xs text-[#7A5A6D]">
-                        <Users className="h-3.5 w-3.5 text-[#D4AF37]" />
+                      <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                        <Users className="h-3.5 w-3.5 text-secondary" />
                         {event.attendees}
                       </div>
                     </div>

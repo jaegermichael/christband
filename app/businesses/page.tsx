@@ -36,12 +36,12 @@ export default function BusinessesPage() {
 
         <section className="mx-auto max-w-7xl px-4 py-12">
           {/* Search & filters */}
-          <div className="mb-8 flex flex-col gap-4 rounded-2xl border border-[#E8E0D0] bg-[#FFFFFF] p-6 shadow-brand-sm md:flex-row">
+          <div className="mb-8 flex flex-col gap-4 rounded-2xl border border-border bg-card/50 p-6 shadow-brand-sm md:flex-row">
             <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#7A5A6D]" />
-              <input type="text" placeholder="Search businesses..." className="w-full rounded-xl border border-[#E8E0D0] bg-[#F5F0E8] py-2.5 pl-10 pr-4 text-sm text-[#2F0B20] placeholder:text-[#7A5A6D] outline-none focus:border-[#551839] focus:ring-1 focus:ring-[#551839]" />
+              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-secondary" />
+              <input type="text" placeholder="Search businesses..." className="w-full rounded-xl border border-input bg-background/50 py-2.5 pl-10 pr-4 text-sm text-foreground placeholder:text-muted-foreground outline-none focus:border-primary focus:ring-1 focus:ring-primary" />
             </div>
-            <select className="rounded-xl border border-[#E8E0D0] bg-[#F5F0E8] px-4 py-2.5 text-sm text-[#2F0B20] outline-none focus:border-[#551839]">
+            <select className="rounded-xl border border-input bg-background/50 px-4 py-2.5 text-sm text-foreground outline-none focus:border-primary">
               {categories.map((c) => <option key={c}>{c}</option>)}
             </select>
           </div>
@@ -49,7 +49,7 @@ export default function BusinessesPage() {
           {/* Business directory */}
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {businesses.map((biz) => (
-              <div key={biz.name} className="group overflow-hidden rounded-2xl border border-[#E8E0D0] bg-[#FFFFFF] shadow-brand-sm transition-all hover:shadow-brand-lg hover:border-[#D4AF37]/50">
+              <div key={biz.name} className="group overflow-hidden rounded-2xl border border-border bg-card/50 shadow-brand-sm transition-all hover:shadow-brand-lg hover:border-secondary/50">
                 <div className="relative h-40 overflow-hidden">
                   <Image
                     src={encodeURI(`/images/${biz.image}`)}
@@ -58,28 +58,28 @@ export default function BusinessesPage() {
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#2F0B20]/60 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
                   {biz.featured && (
-                    <span className="absolute right-3 top-3 rounded-full bg-[#D4AF37] px-2.5 py-0.5 text-[10px] font-semibold uppercase text-[#2F0B20]">Featured</span>
+                    <span className="absolute right-3 top-3 rounded-full bg-secondary px-2.5 py-0.5 text-[10px] font-semibold uppercase text-background">Featured</span>
                   )}
                   <div className="absolute bottom-3 left-4">
-                    <h3 className="font-serif text-lg font-bold text-[#FFFDF7]">{biz.name}</h3>
-                    <span className="mt-1 inline-block rounded-full bg-[#FFFDF7]/20 px-3 py-0.5 text-xs font-medium text-[#FFFDF7] backdrop-blur-sm">{biz.category}</span>
+                    <h3 className="font-serif text-lg font-bold text-primary-foreground">{biz.name}</h3>
+                    <span className="mt-1 inline-block rounded-full bg-primary-foreground/20 px-3 py-0.5 text-xs font-medium text-primary-foreground backdrop-blur-sm">{biz.category}</span>
                   </div>
                 </div>
                 <div className="p-6">
-                  <p className="text-sm text-[#7A5A6D] leading-relaxed">{biz.description}</p>
-                  <div className="mt-4 flex flex-wrap gap-3 border-t border-[#F0EBE0] pt-4">
-                    <div className="flex items-center gap-1.5 text-sm text-[#7A5A6D]">
-                      <MapPin className="h-3.5 w-3.5 text-[#D4AF37]" />
+                  <p className="text-sm text-muted-foreground leading-relaxed">{biz.description}</p>
+                  <div className="mt-4 flex flex-wrap gap-3 border-t border-border pt-4">
+                    <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
+                      <MapPin className="h-3.5 w-3.5 text-secondary" />
                       {biz.city}
                     </div>
-                    <div className="flex items-center gap-1.5 text-sm text-[#7A5A6D]">
-                      <Phone className="h-3.5 w-3.5 text-[#D4AF37]" />
+                    <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
+                      <Phone className="h-3.5 w-3.5 text-secondary" />
                       {biz.phone}
                     </div>
-                    <div className="flex items-center gap-1.5 text-sm text-[#D4AF37]">
-                      <Star className="h-3.5 w-3.5 fill-[#D4AF37]" />
+                    <div className="flex items-center gap-1.5 text-sm text-secondary">
+                      <Star className="h-3.5 w-3.5 fill-secondary" />
                       {biz.rating}
                     </div>
                   </div>
@@ -91,18 +91,18 @@ export default function BusinessesPage() {
           {/* Business Adverts Section */}
           <div id="adverts" className="mt-16">
             <div className="mb-8 flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#D4AF37] to-[#C49B2F]">
-                <Megaphone className="h-5 w-5 text-[#2F0B20]" />
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-secondary to-primary">
+                <Megaphone className="h-5 w-5 text-primary-foreground" />
               </div>
               <div>
-                <h2 className="font-serif text-2xl font-bold text-[#2F0B20]">Business Adverts</h2>
-                <p className="text-sm text-[#7A5A6D]">Featured promotions from Christian businesses</p>
+                <h2 className="font-serif text-2xl font-bold text-foreground">Business Adverts</h2>
+                <p className="text-sm text-muted-foreground">Featured promotions from Christian businesses</p>
               </div>
             </div>
 
             <div className="grid gap-5 md:grid-cols-3">
               {adverts.map((ad) => (
-                <div key={ad.title} className="group overflow-hidden rounded-2xl border-2 border-[#D4AF37]/30 bg-gradient-to-br from-[#FFFDF7] to-[#F5F0E8] shadow-brand-sm">
+                <div key={ad.title} className="group overflow-hidden rounded-2xl border-2 border-secondary/30 bg-gradient-to-br from-card to-secondary/10 shadow-brand-sm">
                   <div className="relative h-36 overflow-hidden">
                     <Image
                       src={encodeURI(`/images/${ad.image}`)}
@@ -111,14 +111,14 @@ export default function BusinessesPage() {
                       sizes="(max-width: 768px) 100vw, 33vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#2F0B20]/50 to-transparent" />
-                    <span className="absolute bottom-3 left-3 rounded-full bg-[#D4AF37] px-3 py-0.5 text-xs font-semibold uppercase text-[#2F0B20]">Advert</span>
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent" />
+                    <span className="absolute bottom-3 left-3 rounded-full bg-secondary px-3 py-0.5 text-xs font-semibold uppercase text-primary-foreground">Advert</span>
                   </div>
                   <div className="p-6">
-                    <h3 className="font-serif text-lg font-bold text-[#2F0B20]">{ad.title}</h3>
-                    <p className="mt-1 text-xs font-medium text-[#551839]">{ad.business}</p>
-                    <p className="mt-3 text-sm text-[#7A5A6D] leading-relaxed">{ad.description}</p>
-                    <button className="mt-4 flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-[#551839] to-[#7A2A5E] px-5 py-2 text-sm font-medium text-[#FFFDF7] transition-all hover:brightness-110 active:scale-[0.98]">
+                    <h3 className="font-serif text-lg font-bold text-foreground">{ad.title}</h3>
+                    <p className="mt-1 text-xs font-medium text-secondary">{ad.business}</p>
+                    <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{ad.description}</p>
+                    <button className="mt-4 flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-primary to-secondary px-5 py-2 text-sm font-medium text-primary-foreground transition-all hover:brightness-110 active:scale-[0.98]">
                       {ad.cta} <ExternalLink className="h-3.5 w-3.5" />
                     </button>
                   </div>

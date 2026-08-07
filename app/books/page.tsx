@@ -33,7 +33,7 @@ export default function BooksPage() {
           {/* Category filters */}
           <div className="mb-8 flex flex-wrap gap-2">
             {bookCategories.map((cat) => (
-              <button key={cat} className="rounded-full border border-[#E8E0D0] bg-[#FFFFFF] px-4 py-2 text-sm text-[#2F0B20] transition-all hover:border-[#D4AF37] hover:bg-[#D4AF37]/10 first:bg-[#551839] first:text-[#FFFDF7] first:border-[#551839]">
+              <button key={cat} className="rounded-full border border-border bg-card/50 px-4 py-2 text-sm text-foreground transition-all hover:border-secondary hover:bg-secondary/10 first:bg-primary first:text-primary-foreground first:border-primary">
                 {cat}
               </button>
             ))}
@@ -42,7 +42,7 @@ export default function BooksPage() {
           {/* Books grid */}
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {books.map((book) => (
-              <div key={book.title} className="group overflow-hidden rounded-2xl border border-[#E8E0D0] bg-[#FFFFFF] shadow-brand-sm transition-all hover:shadow-brand-lg hover:border-[#D4AF37]/50">
+              <div key={book.title} className="group overflow-hidden rounded-2xl border border-border bg-card/50 shadow-brand-sm transition-all hover:shadow-brand-lg hover:border-secondary/50">
                 {/* Book cover image */}
                 <div className="relative h-52 overflow-hidden">
                   <Image
@@ -52,32 +52,32 @@ export default function BooksPage() {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#2F0B20]/60 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
                   <div className="absolute bottom-3 left-3 right-3">
-                    <span className="font-serif text-sm font-bold text-[#FFFDF7] leading-tight line-clamp-2">{book.title}</span>
+                    <span className="font-serif text-sm font-bold text-primary-foreground leading-tight line-clamp-2">{book.title}</span>
                   </div>
                 </div>
                 <div className="p-5">
                   <div className="flex items-center justify-between">
-                    <span className="rounded-full bg-[#551839]/10 px-2.5 py-0.5 text-[10px] font-medium uppercase text-[#551839]">{book.category}</span>
-                    <span className="rounded-full bg-[#F5F0E8] px-2.5 py-0.5 text-[10px] font-medium text-[#7A5A6D]">{book.language}</span>
+                    <span className="rounded-full bg-primary/20 px-2.5 py-0.5 text-[10px] font-medium uppercase text-secondary">{book.category}</span>
+                    <span className="rounded-full bg-secondary/10 px-2.5 py-0.5 text-[10px] font-medium text-muted-foreground">{book.language}</span>
                   </div>
-                  <div className="mt-2 flex items-center gap-1.5 text-xs text-[#7A5A6D]">
-                    <User className="h-3 w-3 text-[#D4AF37]" />
+                  <div className="mt-2 flex items-center gap-1.5 text-xs text-muted-foreground">
+                    <User className="h-3 w-3 text-secondary" />
                     {book.author}
                   </div>
-                  <p className="mt-2 text-xs text-[#7A5A6D] leading-relaxed line-clamp-3">{book.description}</p>
+                  <p className="mt-2 text-xs text-muted-foreground leading-relaxed line-clamp-3">{book.description}</p>
                   <div className="mt-3 flex items-center justify-between">
                     <div>
-                      <span className="font-serif text-lg font-bold text-[#551839]">{book.price}</span>
-                      <span className="ml-2 text-xs text-[#7A5A6D]">{book.priceZIG}</span>
+                      <span className="font-serif text-lg font-bold text-primary">{book.price}</span>
+                      <span className="ml-2 text-xs text-muted-foreground">{book.priceZIG}</span>
                     </div>
-                    <div className="flex items-center gap-1 text-xs text-[#D4AF37]">
-                      <Star className="h-3.5 w-3.5 fill-[#D4AF37]" />
+                    <div className="flex items-center gap-1 text-xs text-secondary">
+                      <Star className="h-3.5 w-3.5 fill-secondary" />
                       {book.rating}
                     </div>
                   </div>
-                  <Link href={`/cart?item=${encodeURIComponent(book.title)}`} className="mt-3 flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#551839] to-[#7A2A5E] py-2.5 text-sm font-medium text-[#FFFDF7] transition-all hover:brightness-110 active:scale-[0.98]">
+                  <Link href={`/cart?item=${encodeURIComponent(book.title)}`} className="mt-3 flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-primary to-secondary py-2.5 text-sm font-medium text-primary-foreground transition-all hover:brightness-110 active:scale-[0.98]">
                     <ShoppingCart className="h-4 w-4" />
                     Add to Cart
                   </Link>

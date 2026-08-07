@@ -47,7 +47,7 @@ export default function ChurchesPage() {
 
         <section className="mx-auto max-w-7xl px-4 py-12">
           {/* Filters */}
-          <div className="mb-8 flex flex-col gap-4 rounded-2xl border border-[#E8E0D0] bg-[#FFFFFF] p-6 shadow-brand-sm md:flex-row">
+          <div className="mb-8 flex flex-col gap-4 rounded-2xl border border-border bg-card/50 p-6 shadow-brand-sm md:flex-row">
             <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#7A5A6D]" />
               <input
@@ -55,27 +55,27 @@ export default function ChurchesPage() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search churches..."
-                className="w-full rounded-xl border border-[#E8E0D0] bg-[#F5F0E8] py-2.5 pl-10 pr-4 text-sm text-[#2F0B20] placeholder:text-[#7A5A6D] outline-none focus:border-[#551839] focus:ring-1 focus:ring-[#551839]"
+                className="w-full rounded-xl border border-input bg-background/50 py-2.5 pl-10 pr-4 text-sm text-foreground placeholder:text-muted-foreground outline-none focus:border-primary focus:ring-1 focus:ring-primary"
               />
             </div>
             <select
               value={province}
               onChange={(e) => setProvince(e.target.value)}
-              className="rounded-xl border border-[#E8E0D0] bg-[#F5F0E8] px-4 py-2.5 text-sm text-[#2F0B20] outline-none focus:border-[#551839]"
+              className="rounded-xl border border-input bg-background/50 px-4 py-2.5 text-sm text-foreground outline-none focus:border-primary"
             >
               {provinces.map((p) => <option key={p}>{p}</option>)}
             </select>
             <select
               value={denomination}
               onChange={(e) => setDenomination(e.target.value)}
-              className="rounded-xl border border-[#E8E0D0] bg-[#F5F0E8] px-4 py-2.5 text-sm text-[#2F0B20] outline-none focus:border-[#551839]"
+              className="rounded-xl border border-input bg-background/50 px-4 py-2.5 text-sm text-foreground outline-none focus:border-primary"
             >
               {denominations.map((d) => <option key={d}>{d}</option>)}
             </select>
           </div>
 
           {/* Results count */}
-          <p className="mb-4 text-sm text-[#7A5A6D]">
+          <p className="mb-4 text-sm text-muted-foreground">
             {filtered.length} {filtered.length === 1 ? "church" : "churches"} found
           </p>
 
@@ -83,25 +83,25 @@ export default function ChurchesPage() {
           {filtered.length > 0 ? (
             <div className="grid gap-5 md:grid-cols-2">
               {filtered.map((church) => (
-                <div key={church.name} className="group rounded-2xl border border-[#E8E0D0] bg-[#FFFFFF] p-6 shadow-brand-sm transition-all hover:shadow-brand-lg hover:border-[#D4AF37]/50">
+                <div key={church.name} className="group rounded-2xl border border-border bg-card/50 p-6 shadow-brand-sm transition-all hover:shadow-brand-lg hover:border-secondary/50">
                   <div className="flex items-start justify-between">
                     <div>
-                      <h3 className="font-serif text-lg font-bold text-[#2F0B20]">{church.name}</h3>
-                      <span className="mt-1 inline-block rounded-full bg-[#551839]/10 px-3 py-0.5 text-xs font-medium text-[#551839]">{church.denomination}</span>
+                      <h3 className="font-serif text-lg font-bold text-foreground">{church.name}</h3>
+                      <span className="mt-1 inline-block rounded-full bg-primary/20 px-3 py-0.5 text-xs font-medium text-secondary">{church.denomination}</span>
                     </div>
                     <ChevronRight className="h-5 w-5 text-[#D4AF37] opacity-0 transition-opacity group-hover:opacity-100" />
                   </div>
                   <div className="mt-4 flex flex-col gap-2">
-                    <div className="flex items-center gap-2 text-sm text-[#7A5A6D]">
-                      <MapPin className="h-4 w-4 text-[#D4AF37]" />
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <MapPin className="h-4 w-4 text-secondary" />
                       {church.address}
                     </div>
-                    <div className="flex items-center gap-2 text-sm text-[#7A5A6D]">
-                      <Phone className="h-4 w-4 text-[#D4AF37]" />
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <Phone className="h-4 w-4 text-secondary" />
                       {church.phone}
                     </div>
-                    <div className="flex items-center gap-2 text-sm text-[#7A5A6D]">
-                      <Clock className="h-4 w-4 text-[#D4AF37]" />
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <Clock className="h-4 w-4 text-secondary" />
                       {church.services}
                     </div>
                   </div>
@@ -110,17 +110,17 @@ export default function ChurchesPage() {
             </div>
           ) : (
             /* Empty state */
-            <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-[#E8E0D0] bg-[#F5F0E8] px-6 py-16 text-center">
-              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#551839]/10">
-                <ChurchIcon className="h-8 w-8 text-[#551839]" />
+            <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-border bg-card/50 px-6 py-16 text-center">
+              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/20">
+                <ChurchIcon className="h-8 w-8 text-secondary" />
               </div>
-              <h3 className="font-serif text-xl font-bold text-[#2F0B20]">No churches found</h3>
-              <p className="mt-2 max-w-md text-sm text-[#7A5A6D]">
+              <h3 className="font-serif text-xl font-bold text-foreground">No churches found</h3>
+              <p className="mt-2 max-w-md text-sm text-muted-foreground">
                 Try adjusting your search or filters. You can also register your church to be listed in the directory.
               </p>
               <a
                 href="/membership?type=church"
-                className="mt-6 rounded-xl bg-gradient-to-r from-[#551839] to-[#7A2A5E] px-6 py-2.5 text-sm font-semibold text-[#FFFDF7] shadow-brand transition-all hover:shadow-brand-lg hover:brightness-110 active:scale-[0.98]"
+                className="mt-6 rounded-xl bg-gradient-to-r from-primary to-secondary px-6 py-2.5 text-sm font-semibold text-primary-foreground shadow-brand transition-all hover:shadow-brand-lg hover:brightness-110 active:scale-[0.98]"
               >
                 Register Your Church
               </a>

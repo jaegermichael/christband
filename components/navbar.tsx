@@ -37,17 +37,17 @@ export function Navbar() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-[#E8E0D0] bg-[#FFFDF7]/95 backdrop-blur-md">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-xl">
       {/* Top bar */}
-      <div className="bg-[#551839] text-[#FFFDF7]">
+      <div className="bg-primary text-primary-foreground">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-1.5 text-xs">
           <span className="flex items-center gap-1.5">
-            <Cross className="h-3 w-3 text-[#D4AF37]" />
+            <Cross className="h-3 w-3 text-secondary" />
             Body of Christ Christian Networking - Zimbabwe
           </span>
           <div className="hidden items-center gap-4 md:flex">
-            <a href="tel:+263772000000" className="hover:text-[#D4AF37] transition-colors">+263 772 000 000</a>
-            <a href="mailto:info@christbrand.co.zw" className="hover:text-[#D4AF37] transition-colors">info@christbrand.co.zw</a>
+            <a href="tel:+263772000000" className="hover:text-secondary transition-colors">+263 772 000 000</a>
+            <a href="mailto:info@christbrand.co.zw" className="hover:text-secondary transition-colors">info@christbrand.co.zw</a>
           </div>
         </div>
       </div>
@@ -55,12 +55,12 @@ export function Navbar() {
       {/* Main nav */}
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
         <Link href="/" className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#551839] to-[#7A2A5E]">
-            <Cross className="h-5 w-5 text-[#D4AF37]" />
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary">
+            <Cross className="h-5 w-5 text-background" />
           </div>
           <div>
-            <span className="font-serif text-xl font-bold text-[#551839]">Christbrand</span>
-            <span className="block text-[10px] uppercase tracking-widest text-[#7A5A6D]">Body of Christ</span>
+            <span className="font-serif text-xl font-bold text-foreground">Christbrand</span>
+            <span className="block text-[10px] uppercase tracking-widest text-muted-foreground">Body of Christ</span>
           </div>
         </Link>
 
@@ -79,18 +79,18 @@ export function Navbar() {
                   aria-haspopup="menu"
                   aria-expanded={openDropdown === link.label}
                   aria-controls={`dropdown-${link.label}`}
-                  className="flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-[#2F0B20] transition-colors hover:bg-[#F5F0E8] hover:text-[#551839] active:scale-[0.98]"
+                  className="flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-secondary/10 hover:text-secondary active:scale-[0.98]"
                 >
                   {link.label}
                   <ChevronDown className="h-3.5 w-3.5" />
                 </button>
                 {openDropdown === link.label && (
-                  <div id={`dropdown-${link.label}`} className="absolute left-0 top-full z-50 min-w-[200px] rounded-xl border border-[#E8E0D0] bg-[#FFFDF7] p-2 shadow-lg">
+                  <div id={`dropdown-${link.label}`} className="absolute left-0 top-full z-50 min-w-[200px] rounded-xl border border-border bg-background/95 backdrop-blur-xl p-2 shadow-lg">
                     {link.children.map((child) => (
                       <Link
                         key={child.href}
                         href={child.href}
-                        className="block rounded-lg px-3 py-2 text-sm text-[#2F0B20] transition-colors hover:bg-[#F5F0E8] hover:text-[#551839]"
+                        className="block rounded-lg px-3 py-2 text-sm text-foreground transition-colors hover:bg-secondary/10 hover:text-secondary"
                       >
                         {child.label}
                       </Link>
@@ -102,7 +102,7 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-lg px-3 py-2 text-sm font-medium text-[#2F0B20] transition-colors hover:bg-[#F5F0E8] hover:text-[#551839] active:scale-[0.98]"
+                className="rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-secondary/10 hover:text-secondary active:scale-[0.98]"
               >
                 {link.label}
               </Link>
@@ -114,13 +114,13 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <Link
             href="/membership"
-            className="hidden rounded-lg bg-gradient-to-r from-[#551839] to-[#7A2A5E] px-4 py-2 text-sm font-medium text-[#FFFDF7] shadow-brand transition-all hover:shadow-brand-lg hover:brightness-110 active:scale-[0.98] md:block"
+            className="hidden rounded-lg bg-gradient-to-r from-primary to-secondary px-4 py-2 text-sm font-medium text-primary-foreground shadow-brand transition-all hover:shadow-brand-lg hover:brightness-110 active:scale-[0.98] md:block"
           >
             Join Us
           </Link>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="rounded-lg p-2 text-[#551839] transition-colors hover:bg-[#F5F0E8] active:scale-[0.98] lg:hidden"
+            className="rounded-lg p-2 text-foreground transition-colors hover:bg-secondary/10 active:scale-[0.98] lg:hidden"
             aria-label="Toggle navigation menu"
             aria-expanded={mobileOpen}
             aria-controls="mobile-menu"
@@ -132,7 +132,7 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="border-t border-[#E8E0D0] bg-[#FFFDF7] px-4 pb-4 lg:hidden">
+        <div className="border-t border-border bg-background/95 backdrop-blur-xl px-4 pb-4 lg:hidden">
           {navLinks.map((link) =>
             link.children ? (
               <div key={link.label}>
@@ -141,19 +141,19 @@ export function Navbar() {
                   onClick={() => setOpenDropdown(openDropdown === link.label ? null : link.label)}
                   aria-expanded={openDropdown === link.label}
                   aria-controls={`dropdown-${link.label}`}
-                  className="flex w-full items-center justify-between py-3 text-sm font-medium text-[#2F0B20]"
+                  className="flex w-full items-center justify-between py-3 text-sm font-medium text-foreground"
                 >
                   {link.label}
                   <ChevronDown className={`h-4 w-4 transition-transform ${openDropdown === link.label ? "rotate-180" : ""}`} />
                 </button>
                 {openDropdown === link.label && (
-                  <div className="ml-4 border-l-2 border-[#D4AF37] pl-3">
+                  <div className="ml-4 border-l-2 border-primary pl-3">
                     {link.children.map((child) => (
                       <Link
                         key={child.href}
                         href={child.href}
                         onClick={() => setMobileOpen(false)}
-                        className="block py-2 text-sm text-[#7A5A6D] hover:text-[#551839]"
+                        className="block py-2 text-sm text-muted-foreground hover:text-secondary"
                       >
                         {child.label}
                       </Link>
@@ -166,7 +166,7 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="block border-b border-[#F0EBE0] py-3 text-sm font-medium text-[#2F0B20] hover:text-[#551839]"
+                className="block border-b border-border/50 py-3 text-sm font-medium text-foreground hover:text-secondary"
               >
                 {link.label}
               </Link>
@@ -175,7 +175,7 @@ export function Navbar() {
           <Link
             href="/membership"
             onClick={() => setMobileOpen(false)}
-            className="mt-3 block rounded-lg bg-gradient-to-r from-[#551839] to-[#7A2A5E] px-4 py-2.5 text-center text-sm font-medium text-[#FFFDF7] shadow-brand active:scale-[0.98]"
+            className="mt-3 block rounded-lg bg-gradient-to-r from-primary to-secondary px-4 py-2.5 text-center text-sm font-medium text-primary-foreground shadow-brand active:scale-[0.98]"
           >
             Join Us
           </Link>

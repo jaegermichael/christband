@@ -22,7 +22,7 @@ export default function ShopPage() {
   return (
     <div className="flex min-h-[100dvh] flex-col">
       <Navbar />
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         <PageHeader
           badge="Shop"
           title="Christian Shop"
@@ -33,7 +33,7 @@ export default function ShopPage() {
           {/* Category filters */}
           <div className="mb-8 flex flex-wrap gap-2">
             {shopCategories.map((cat) => (
-              <button key={cat} className="rounded-full border border-[#E8E0D0] bg-[#FFFFFF] px-4 py-2 text-sm text-[#2F0B20] transition-all hover:border-[#D4AF37] hover:bg-[#D4AF37]/10 first:bg-[#551839] first:text-[#FFFDF7] first:border-[#551839]">
+              <button key={cat} className="rounded-full border border-border bg-card/50 px-4 py-2 text-sm text-foreground transition-all hover:border-secondary hover:bg-secondary/10 first:bg-primary first:text-primary-foreground first:border-primary">
                 {cat}
               </button>
             ))}
@@ -42,7 +42,7 @@ export default function ShopPage() {
           {/* Products grid */}
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {products.map((product) => (
-              <div key={product.name} className="group rounded-2xl border border-[#E8E0D0] bg-[#FFFFFF] shadow-sm transition-all hover:shadow-lg hover:border-[#D4AF37]/50 overflow-hidden">
+              <div key={product.name} className="group rounded-2xl border border-border bg-card/50 shadow-sm transition-all hover:shadow-lg hover:border-secondary/50 overflow-hidden">
                 <div className="relative h-48 overflow-hidden">
                   <Image
                     src={encodeURI(`/images/${product.image}`)}
@@ -53,20 +53,20 @@ export default function ShopPage() {
                   />
                 </div>
                 <div className="p-5">
-                  <span className="inline-block rounded-full bg-[#551839]/10 px-2.5 py-0.5 text-[10px] font-medium uppercase text-[#551839]">{product.category}</span>
-                  <h3 className="mt-2 font-serif font-bold text-[#2F0B20]">{product.name}</h3>
-                  <p className="mt-1 text-xs text-[#7A5A6D] leading-relaxed">{product.description}</p>
+                  <span className="inline-block rounded-full bg-primary/20 px-2.5 py-0.5 text-[10px] font-medium uppercase text-secondary">{product.category}</span>
+                  <h3 className="mt-2 font-serif font-bold text-foreground">{product.name}</h3>
+                  <p className="mt-1 text-xs text-muted-foreground leading-relaxed">{product.description}</p>
                   <div className="mt-3 flex items-center justify-between">
                     <div>
-                      <span className="font-serif text-lg font-bold text-[#551839]">{product.price}</span>
-                      <span className="ml-2 text-xs text-[#7A5A6D]">{product.priceZIG}</span>
+                      <span className="font-serif text-lg font-bold text-primary">{product.price}</span>
+                      <span className="ml-2 text-xs text-muted-foreground">{product.priceZIG}</span>
                     </div>
-                    <div className="flex items-center gap-1 text-xs text-[#D4AF37]">
-                      <Star className="h-3.5 w-3.5 fill-[#D4AF37]" />
+                    <div className="flex items-center gap-1 text-xs text-secondary">
+                      <Star className="h-3.5 w-3.5 fill-secondary" />
                       {product.rating}
                     </div>
                   </div>
-                  <Link href={`/cart?item=${encodeURIComponent(product.name)}`} className="mt-3 block w-full rounded-xl bg-gradient-to-r from-[#551839] to-[#7A2A5E] py-2.5 text-center text-sm font-medium text-[#FFFDF7] transition-all hover:brightness-110">
+                  <Link href={`/cart?item=${encodeURIComponent(product.name)}`} className="mt-3 block w-full rounded-xl bg-gradient-to-r from-primary to-secondary py-2.5 text-center text-sm font-medium text-primary-foreground transition-all hover:brightness-110">
                     Add to Cart
                   </Link>
                 </div>
@@ -75,14 +75,14 @@ export default function ShopPage() {
           </div>
 
           {/* Payment info */}
-          <div id="payment-methods" className="mt-12 rounded-2xl border border-[#E8E0D0] bg-[#F5F0E8] p-6 text-center">
-            <h3 className="font-serif text-lg font-bold text-[#2F0B20]">Payment Methods</h3>
-            <p className="mt-2 text-sm text-[#7A5A6D]">
+          <div id="payment-methods" className="mt-12 rounded-2xl border border-border bg-card/50 p-6 text-center">
+            <h3 className="font-serif text-lg font-bold text-foreground">Payment Methods</h3>
+            <p className="mt-2 text-sm text-muted-foreground">
               We accept Paynow, EcoCash, OneMoney, bank transfer, and ZiG. International orders can pay via Visa/Mastercard.
             </p>
             <div className="mt-4 flex flex-wrap justify-center gap-3">
               {["Paynow", "EcoCash", "OneMoney", "ZiG", "Visa/Mastercard"].map((m) => (
-                <span key={m} className="rounded-full border border-[#D4AF37]/30 bg-[#FFFFFF] px-4 py-1.5 text-xs font-medium text-[#551839]">{m}</span>
+                <span key={m} className="rounded-full border border-secondary/30 bg-background/50 px-4 py-1.5 text-xs font-medium text-secondary">{m}</span>
               ))}
             </div>
           </div>

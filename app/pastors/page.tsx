@@ -26,13 +26,13 @@ export default function PastorsPage() {
 
         <section className="mx-auto max-w-7xl px-4 py-12">
           {/* Search */}
-          <div className="mb-8 flex flex-col gap-4 rounded-2xl border border-[#E8E0D0] bg-[#FFFFFF] p-6 shadow-brand-sm md:flex-row">
+          <div className="mb-8 flex flex-col gap-4 rounded-2xl border border-border bg-card/50 p-6 shadow-brand-sm md:flex-row">
             <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#7A5A6D]" />
+              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-secondary" />
               <input
                 type="text"
                 placeholder="Search pastors by name, church, or city..."
-                className="w-full rounded-xl border border-[#E8E0D0] bg-[#F5F0E8] py-2.5 pl-10 pr-4 text-sm text-[#2F0B20] placeholder:text-[#7A5A6D] outline-none focus:border-[#551839] focus:ring-1 focus:ring-[#551839]"
+                className="w-full rounded-xl border border-input bg-background/50 py-2.5 pl-10 pr-4 text-sm text-foreground placeholder:text-muted-foreground outline-none focus:border-primary focus:ring-1 focus:ring-primary"
               />
             </div>
           </div>
@@ -40,7 +40,7 @@ export default function PastorsPage() {
           {/* Pastors grid */}
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {pastors.map((pastor) => (
-              <div key={pastor.name} className="group overflow-hidden rounded-2xl border border-[#E8E0D0] bg-[#FFFFFF] shadow-brand-sm transition-all hover:shadow-brand-lg hover:border-[#D4AF37]/50">
+              <div key={pastor.name} className="group overflow-hidden rounded-2xl border border-border bg-card/50 shadow-brand-sm transition-all hover:shadow-brand-lg hover:border-secondary/50">
                 <div className="relative h-48 overflow-hidden">
                   <Image
                     src={encodeURI(`/images/${pastor.image}`)}
@@ -49,29 +49,29 @@ export default function PastorsPage() {
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#2F0B20]/70 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/70 to-transparent" />
                   <div className="absolute bottom-3 left-4">
-                    <h3 className="font-serif text-lg font-bold text-[#FFFDF7]">{pastor.name}</h3>
-                    <span className="mt-1 inline-block rounded-full bg-[#D4AF37]/20 px-3 py-0.5 text-xs font-semibold text-[#D4AF37] backdrop-blur-sm">{pastor.title}</span>
+                    <h3 className="font-serif text-lg font-bold text-primary-foreground">{pastor.name}</h3>
+                    <span className="mt-1 inline-block rounded-full bg-secondary/20 px-3 py-0.5 text-xs font-semibold text-secondary backdrop-blur-sm">{pastor.title}</span>
                   </div>
                 </div>
                 <div className="p-6">
-                  <p className="text-sm text-[#7A5A6D] leading-relaxed">{pastor.bio}</p>
-                  <div className="mt-4 flex flex-col gap-2 border-t border-[#F0EBE0] pt-4">
-                    <div className="flex items-center gap-2 text-sm text-[#7A5A6D]">
-                      <BookOpen className="h-4 w-4 text-[#D4AF37]" />
+                  <p className="text-sm text-muted-foreground leading-relaxed">{pastor.bio}</p>
+                  <div className="mt-4 flex flex-col gap-2 border-t border-border pt-4">
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <BookOpen className="h-4 w-4 text-secondary" />
                       {pastor.church}
                     </div>
-                    <div className="flex items-center gap-2 text-sm text-[#7A5A6D]">
-                      <MapPin className="h-4 w-4 text-[#D4AF37]" />
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <MapPin className="h-4 w-4 text-secondary" />
                       {pastor.city}
                     </div>
-                    <div className="flex items-center gap-2 text-sm text-[#7A5A6D]">
-                      <Phone className="h-4 w-4 text-[#D4AF37]" />
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <Phone className="h-4 w-4 text-secondary" />
                       {pastor.phone}
                     </div>
-                    <div className="flex items-center gap-2 text-sm text-[#7A5A6D]">
-                      <Mail className="h-4 w-4 text-[#D4AF37]" />
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <Mail className="h-4 w-4 text-secondary" />
                       {pastor.email}
                     </div>
                   </div>

@@ -35,7 +35,7 @@ export default function OrganisationsPage() {
             {categories.map((cat) => (
               <button
                 key={cat}
-                className="rounded-full border border-[#E8E0D0] bg-[#FFFFFF] px-4 py-2 text-sm text-[#2F0B20] transition-all hover:border-[#D4AF37] hover:bg-[#D4AF37]/10 hover:text-[#551839] first:bg-[#551839] first:text-[#FFFDF7] first:border-[#551839]"
+                className="rounded-full border border-border bg-card/50 px-4 py-2 text-sm text-foreground transition-all hover:border-secondary hover:bg-secondary/10 hover:text-secondary first:bg-primary first:text-primary-foreground first:border-primary"
               >
                 {cat}
               </button>
@@ -45,7 +45,7 @@ export default function OrganisationsPage() {
           {/* Organisations grid */}
           <div className="grid gap-5 md:grid-cols-2">
             {organisations.map((org) => (
-              <div key={org.name} className="group overflow-hidden rounded-2xl border border-[#E8E0D0] bg-[#FFFFFF] shadow-brand-sm transition-all hover:shadow-brand-lg hover:border-[#D4AF37]/50">
+              <div key={org.name} className="group overflow-hidden rounded-2xl border border-border bg-card/50 shadow-brand-sm transition-all hover:shadow-brand-lg hover:border-secondary/50">
                 <div className="relative h-40 overflow-hidden">
                   <Image
                     src={encodeURI(`/images/${org.image}`)}
@@ -54,30 +54,30 @@ export default function OrganisationsPage() {
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#2F0B20]/60 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
                   <div className="absolute bottom-3 left-4 right-4 flex items-start justify-between">
                     <div>
-                      <h3 className="font-serif text-lg font-bold text-[#FFFDF7]">{org.name}</h3>
-                      <span className="mt-1 inline-block rounded-full bg-[#FFFDF7]/20 px-3 py-0.5 text-xs font-medium text-[#FFFDF7] backdrop-blur-sm">{org.category}</span>
+                      <h3 className="font-serif text-lg font-bold text-primary-foreground">{org.name}</h3>
+                      <span className="mt-1 inline-block rounded-full bg-primary-foreground/20 px-3 py-0.5 text-xs font-medium text-primary-foreground backdrop-blur-sm">{org.category}</span>
                     </div>
-                    <Link href={org.profile} className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#D4AF37] text-[#2F0B20] transition-colors hover:bg-[#E8CC6A]" aria-label={`View ${org.name}`}>
+                    <Link href={org.profile} className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-secondary text-primary-foreground transition-colors hover:bg-secondary/80" aria-label={`View ${org.name}`}>
                       <ExternalLink className="h-4 w-4" />
                     </Link>
                   </div>
                 </div>
                 <div className="p-6">
-                  <p className="text-sm text-[#7A5A6D] leading-relaxed">{org.description}</p>
-                  <div className="mt-4 flex flex-wrap gap-4 border-t border-[#F0EBE0] pt-4">
-                    <div className="flex items-center gap-1.5 text-sm text-[#7A5A6D]">
-                      <MapPin className="h-3.5 w-3.5 text-[#D4AF37]" />
+                  <p className="text-sm text-muted-foreground leading-relaxed">{org.description}</p>
+                  <div className="mt-4 flex flex-wrap gap-4 border-t border-border pt-4">
+                    <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
+                      <MapPin className="h-3.5 w-3.5 text-secondary" />
                       {org.location}
                     </div>
-                    <div className="flex items-center gap-1.5 text-sm text-[#7A5A6D]">
-                      <Users className="h-3.5 w-3.5 text-[#D4AF37]" />
+                    <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
+                      <Users className="h-3.5 w-3.5 text-secondary" />
                       {org.members}
                     </div>
-                    <div className="flex items-center gap-1.5 text-sm text-[#7A5A6D]">
-                      <Globe className="h-3.5 w-3.5 text-[#D4AF37]" />
+                    <div className="flex items-center gap-1.5 text-sm text-secondary">
+                      <Globe className="h-3.5 w-3.5" />
                       View Profile
                     </div>
                   </div>
