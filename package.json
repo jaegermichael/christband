@@ -80,6 +80,8 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.2.0",
+    "@types/d3-array": "^3.2.2",
+    "@types/d3-shape": "^3.1.8",
     "@types/node": "^22",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
