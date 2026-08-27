@@ -1,7 +1,7 @@
 import { AdminSidebar } from "@/components/admin/admin-sidebar"
 
 export const metadata = {
-  title: "Admin Panel - Christbrand",
+  title: "Admin Panel - ChristBand",
   description: "Manage members, churches, pastors, adverts, and payments.",
 }
 

@@ -32,7 +32,7 @@ export async function listAdminUsers() {
   const now = new Date().toISOString()
   const defaultUser: AdminUser = {
     id: crypto.randomUUID(),
-    name: "Christbrand Admin",
+    name: "ChristBand Admin",
     email,
     passwordHash: await bcrypt.hash(defaultAdminPassword(), 12),
     role: "OWNER",

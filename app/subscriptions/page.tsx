@@ -9,7 +9,7 @@ const plans = [
     name: "Free",
     price: "$0",
     period: "forever",
-    description: "Get started with basic access to the Christbrand community.",
+    description: "Get started with basic access to the ChristBand community.",
     icon: Star,
     features: [
       "Browse Church Directory",
@@ -84,7 +84,7 @@ export default function SubscriptionsPage() {
         <PageHeader
           badge="Pricing"
           title="Subscription Plans"
-          description="Choose the plan that works best for you. Support the Christbrand mission while unlocking powerful features to grow your ministry and business."
+          description="Choose the plan that works best for you. Support the ChristBand mission while unlocking powerful features to grow your ministry and business."
         />
 
         {/* Pricing Cards */}
@@ -178,7 +178,7 @@ export default function SubscriptionsPage() {
               },
               {
                 q: "Is the Free plan really free forever?",
-                a: "Absolutely. The Free plan gives you basic access to the Christbrand platform with no hidden charges or time limits.",
+                a: "Absolutely. The Free plan gives you basic access to the ChristBand platform with no hidden charges or time limits.",
               },
               {
                 q: "How do I pay with EcoCash or Paynow?",
@@ -207,7 +207,7 @@ export default function SubscriptionsPage() {
               Ready to Join the Body of Christ?
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-[#D8B9CB] leading-relaxed">
-              Start your journey with Christbrand today. Connect, grow, and serve alongside fellow believers in Zimbabwe.
+              Start your journey with ChristBand today. Connect, grow, and serve alongside fellow believers in Zimbabwe.
             </p>
             <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link

@@ -51,7 +51,7 @@ export function AdminLoginForm() {
           <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[#D4AF37] to-[#C49B2F] shadow-xl">
             <Cross className="h-8 w-8 text-[#2F0B20]" />
           </div>
-          <h1 className="font-serif text-2xl font-bold text-[#FFFDF7]">Christbrand Admin</h1>
+          <h1 className="font-serif text-2xl font-bold text-[#FFFDF7]">ChristBand Admin</h1>
           <p className="mt-1 text-sm text-[#D8B9CB]">Sign in to continue to the admin panel</p>
         </div>
 
@@ -104,7 +104,7 @@ export function AdminLoginForm() {
         </form>
 
         <p className="mt-6 text-center text-xs text-[#D8B9CB]/60">
-          Christbrand Admin Panel - authorized personnel only
+          ChristBand Admin Panel - authorized personnel only
         </p>
       </div>
     </main>

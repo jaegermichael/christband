@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { PageHeader } from "@/components/page-header"
@@ -16,9 +17,9 @@ const businesses = [
 ]
 
 const adverts = [
-  { title: "Grand Opening: Faith Print Harare East", business: "Faith Print Solutions", description: "New branch now open! 20% off all church printing orders this month. Visit us at Eastgate Mall, Harare.", cta: "Visit Us", image: "download.jpg" },
-  { title: "Wedding Season Special", business: "Shalom Catering Services", description: "Book your church wedding catering before March and receive a free dessert table. Serving Bulawayo and surrounds.", cta: "Book Now", image: "Imagenes AI religiosas gratis.jpg" },
-  { title: "Holy Land Tour 2026", business: "Zion Travels & Tours", description: "Join our 10-day Holy Land tour in September. Walk where Jesus walked. Early bird prices available now.", cta: "Learn More", image: "St Francis Church ⛪  Sri Lanka.jpg" },
+  { title: "Grand Opening: Faith Print Harare East", business: "Faith Print Solutions", description: "New branch now open! 20% off all church printing orders this month. Visit us at Eastgate Mall, Harare.", cta: "Visit Us", image: "download.jpg", href: "tel:+263242750111" },
+  { title: "Wedding Season Special", business: "Shalom Catering Services", description: "Book your church wedding catering before March and receive a free dessert table. Serving Bulawayo and surrounds.", cta: "Book Now", image: "Imagenes AI religiosas gratis.jpg", href: "tel:+263292400222" },
+  { title: "Holy Land Tour 2026", business: "Zion Travels & Tours", description: "Join our 10-day Holy Land tour in September. Walk where Jesus walked. Early bird prices available now.", cta: "Learn More", image: "St Francis Church ⛪  Sri Lanka.jpg", href: "tel:+263242900888" },
 ]
 
 const categories = ["All", "Printing & Publishing", "Catering", "Automotive", "Beauty & Wellness", "Legal Services", "Travel", "Technology", "Construction"]
@@ -118,9 +119,9 @@ export default function BusinessesPage() {
                     <h3 className="font-serif text-lg font-bold text-foreground">{ad.title}</h3>
                     <p className="mt-1 text-xs font-medium text-secondary">{ad.business}</p>
                     <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{ad.description}</p>
-                    <button className="mt-4 flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-primary to-secondary px-5 py-2 text-sm font-medium text-primary-foreground transition-all hover:brightness-110 active:scale-[0.98]">
-                      {ad.cta} <ExternalLink className="h-3.5 w-3.5" />
-                    </button>
+                    <Link href={ad.href} className="mt-4 inline-flex items-center gap-1.5 rounded-md bg-secondary px-5 py-2 text-sm font-bold text-secondary-foreground transition-all hover:-translate-y-0.5 hover:bg-[#ffd16a]">
+                      {ad.cta} <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+                    </Link>
                   </div>
                 </div>
               ))}

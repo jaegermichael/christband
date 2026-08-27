@@ -6,8 +6,8 @@ import { SideButtons } from "@/components/side-buttons"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Gospel Music | Christbrand",
-  description: "Explore gospel worship playlists, choir performances, and music ministry resources on Christbrand.",
+  title: "Gospel Music | ChristBand",
+  description: "Explore gospel worship playlists, choir performances, and music ministry resources on ChristBand.",
 }
 
 const imageCards = [
@@ -19,7 +19,7 @@ const imageCards = [
   {
     src: encodeURI("/images/Jesus Banner.jpg"),
     alt: "Raised hands in praise during concert worship",
-    caption: "Raise your hands in praise with Christbrand gospel ministry.",
+    caption: "Raise your hands in praise with ChristBand gospel ministry.",
   },
 ]
 
@@ -84,7 +84,7 @@ export default function GospelMusicPage() {
                 Building gospel connection through music, ministry, and media.
               </h2>
               <p className="max-w-xl text-base leading-relaxed text-muted-foreground">
-                Christbrand helps gospel artists and choirs reach the wider Body of Christ. Our gospel section is designed to feature worship music, broadcast events, and local ministry projects that encourage spiritual growth.
+                ChristBand helps gospel artists and choirs reach the wider Body of Christ. Our gospel section is designed to feature worship music, broadcast events, and local ministry projects that encourage spiritual growth.
               </p>
               <div className="grid gap-4 sm:grid-cols-2">
                 {[
@@ -103,7 +103,7 @@ export default function GospelMusicPage() {
             <div className="rounded-[2rem] border border-border bg-card/50 p-8 shadow-sm">
               <h3 className="text-2xl font-semibold text-foreground">What we need from you</h3>
               <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-                To launch gospel ministry on Christbrand, send us the music assets and contact details that will make this section authentic and ready for worship.
+                To launch gospel ministry on ChristBand, send us the music assets and contact details that will make this section authentic and ready for worship.
               </p>
               <ul className="mt-6 space-y-4 text-sm leading-relaxed text-muted-foreground">
                 <li>• Gospel albums, playlists, and worship recordings</li>
@@ -128,7 +128,7 @@ export default function GospelMusicPage() {
               {[
                 {
                   title: "Submit Worship Audio",
-                  text: "Share your gospel songs, choir recordings, and worship playlists to feature on Christbrand.",
+                  text: "Share your gospel songs, choir recordings, and worship playlists to feature on ChristBand.",
                 },
                 {
                   title: "Promote Gospel Events",

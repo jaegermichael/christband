@@ -22,25 +22,8 @@ const fraunces = Fraunces({
 })
 
 export const metadata: Metadata = {
-  title: 'Christbrand - Body of Christ Christian Networking Platform',
-  description: 'Zimbabwe\'s premier Christian networking platform connecting churches, pastors, businesses, and believers across the nation.',
-  icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
-  },
+  title: 'ChristBand | Zimbabwe’s Christian Community',
+  description: 'ChristBand brings Zimbabwe’s churches, believers, pastors, ministries, and Christian businesses together on one platform.',
 }
 
 export default function RootLayout({

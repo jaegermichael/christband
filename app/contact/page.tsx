@@ -5,8 +5,8 @@ import { Navbar } from "@/components/navbar"
 import { SideButtons } from "@/components/side-buttons"
 
 export const metadata: Metadata = {
-  title: "Contact | Christbrand",
-  description: "Contact Christbrand for gospel music submissions, ministry features, and worship promotion in Zimbabwe.",
+  title: "Contact | ChristBand",
+  description: "Contact ChristBand for gospel music submissions, ministry features, and worship promotion in Zimbabwe.",
 }
 
 export default function ContactPage() {
@@ -20,7 +20,7 @@ export default function ContactPage() {
             <p className="mb-4 text-sm uppercase tracking-[0.3em] text-secondary">Contact Us</p>
             <h1 className="text-4xl font-bold sm:text-5xl">Let's bring gospel music and ministry to every church.</h1>
             <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-secondary/80 sm:text-lg">
-              Share your ministry details, gospel recordings, choir stories, and event information so Christbrand can help your music ministry reach the full Body of Christ.
+              Share your ministry details, gospel recordings, choir stories, and event information so ChristBand can help your music ministry reach the full Body of Christ.
             </p>
           </div>
         </section>
@@ -41,7 +41,7 @@ export default function ContactPage() {
           <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
             <div className="space-y-6">
               <div className="rounded-[2rem] border border-border bg-card/50 p-10 shadow-sm">
-                <h2 className="text-3xl font-semibold text-foreground">Get in touch with Christbrand</h2>
+                <h2 className="text-3xl font-semibold text-foreground">Get in touch with ChristBand</h2>
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                   We are ready to feature your gospel music ministry, worship events, and outreach activities. Use the contact details below or send us a message with your ministry assets.
                 </p>

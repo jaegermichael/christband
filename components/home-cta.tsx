@@ -1,31 +1,19 @@
 import Link from "next/link"
-import { ArrowRight } from "lucide-react"
+import { ArrowUpRight, Cross } from "lucide-react"
 
 export function HomeCTA() {
   return (
-    <section className="py-16">
-      <div className="mx-auto max-w-7xl px-4">
-        <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-primary via-secondary to-background p-10 text-center md:p-16">
-          <h2 className="font-serif text-3xl font-bold text-primary-foreground md:text-4xl text-balance">
-            Join the Christbrand Family Today
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-secondary/80 leading-relaxed">
-            Whether you are a church leader, business owner, or a believer seeking community, there is a place for you at Christbrand. Register and connect with the Body of Christ across Zimbabwe.
-          </p>
-          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link
-              href="/membership"
-              className="flex items-center gap-2 rounded-xl bg-background px-7 py-3 font-semibold text-primary shadow-brand-lg transition-all hover:bg-secondary hover:text-background active:scale-[0.98]"
-            >
-              Register Now <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link
-              href="/subscriptions"
-              className="flex items-center gap-2 rounded-xl border border-secondary/50 px-7 py-3 font-semibold text-secondary transition-all hover:bg-secondary/10 active:scale-[0.98]"
-            >
-              View Plans
-            </Link>
-          </div>
+    <section className="relative overflow-hidden bg-secondary px-4 py-16 text-secondary-foreground md:py-20">
+      <div className="brand-grid absolute inset-0 opacity-20" />
+      <div className="relative mx-auto flex max-w-7xl flex-col gap-8 md:flex-row md:items-end md:justify-between">
+        <div className="max-w-2xl">
+          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.28em]"><Cross className="h-4 w-4" aria-hidden="true" />For every part of the Body</div>
+          <h2 className="mt-5 font-serif text-4xl leading-tight tracking-[-0.03em] md:text-5xl">Bring your church community closer.</h2>
+          <p className="mt-4 max-w-xl text-base leading-7 text-secondary-foreground/75">Whether you lead a church, run a Christian business, or are looking for a place to belong, there is a place for you on ChristBand.</p>
+        </div>
+        <div className="flex shrink-0 flex-wrap gap-3">
+          <Link href="/membership" className="inline-flex items-center gap-2 rounded-md bg-[#160b25] px-5 py-3 text-sm font-bold text-foreground hover:-translate-y-0.5 hover:bg-[#211132]">Join the community <ArrowUpRight className="h-4 w-4 text-secondary" aria-hidden="true" /></Link>
+          <Link href="/subscriptions" className="inline-flex items-center gap-2 rounded-md border border-secondary-foreground/30 px-5 py-3 text-sm font-bold hover:bg-secondary-foreground/10">View plans <ArrowUpRight className="h-4 w-4" aria-hidden="true" /></Link>
         </div>
       </div>
     </section>

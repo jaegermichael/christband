@@ -1,54 +1,31 @@
 import Image from "next/image"
-import { Cross, Heart, Globe } from "lucide-react"
+import { Cross, Heart, Globe, Users } from "lucide-react"
 
 export function HomeAbout() {
+  const values = [
+    { icon: Cross, title: "Faith-centred", desc: "Built on the foundation of Jesus Christ and His word." },
+    { icon: Heart, title: "Community first", desc: "Strengthening bonds between believers across Zimbabwe." },
+    { icon: Globe, title: "Nationwide reach", desc: "Connecting congregations across all 10 provinces." },
+    { icon: Users, title: "Kingdom focused", desc: "Advancing God’s purposes through unity and service." },
+  ]
+
   return (
-    <section className="bg-secondary/10 py-16">
-      <div className="mx-auto max-w-7xl px-4">
-        <div className="grid items-center gap-10 lg:grid-cols-2">
-          <div>
-            <span className="mb-2 inline-block rounded-full bg-primary/10 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-secondary">
-              About Us
-            </span>
-            <h2 className="font-serif text-3xl font-bold text-foreground md:text-4xl text-balance">
-              Uniting the Body of Christ in Zimbabwe
-            </h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
-              Christbrand is Zimbabwe's premier Christian networking platform dedicated to connecting believers, churches, pastors, and Christian businesses across every province. We believe that when the Body of Christ is connected, communities are transformed and God's kingdom advances.
-            </p>
-            <p className="mt-3 text-muted-foreground leading-relaxed">
-              From Harare to Bulawayo, Mutare to Masvingo, we are building bridges between congregations, fostering fellowship, and creating opportunities for believers to grow together in faith and purpose.
-            </p>
+    <section className="border-y border-secondary/20 bg-[#211132] py-20 md:py-28" aria-labelledby="about-heading">
+      <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+        <div>
+          <p className="text-xs font-bold uppercase tracking-[0.28em] text-secondary">Why ChristBand</p>
+          <h2 id="about-heading" className="mt-4 max-w-xl font-serif text-4xl leading-tight tracking-[-0.03em] text-foreground md:text-5xl">A stronger church community starts with connection.</h2>
+          <p className="mt-6 max-w-xl text-base leading-8 text-muted-foreground">ChristBand is a Christian networking platform for believers, churches, pastors, ministries, and Christian businesses across Zimbabwe. When the Body of Christ is connected, communities can move from isolated effort to shared purpose.</p>
+          <p className="mt-4 max-w-xl text-base leading-8 text-muted-foreground">From Harare to Bulawayo, Mutare to Masvingo, this is a place to find one another, share what is happening, and make room for faith to grow.</p>
+        </div>
+        <div>
+          <div className="relative overflow-hidden rounded-xl border border-secondary/30 bg-[#160b25] p-2">
+            <Image src={encodeURI("/images/Christian Group Prayer – African Faith, Unity & Spiritual Growth Inspiration.jpg")} alt="A Christian group gathered in prayer" width={800} height={400} className="h-72 w-full rounded-lg object-cover opacity-90 md:h-96" />
+            <div className="pointer-events-none absolute inset-2 rounded-lg bg-gradient-to-t from-[#160b25]/80 via-transparent to-transparent" />
+            <p className="absolute bottom-7 left-7 max-w-xs font-serif text-2xl leading-tight text-foreground">United in the Spirit, ready to serve.</p>
           </div>
-          <div className="grid gap-4">
-            <div className="overflow-hidden rounded-[2rem] border border-border bg-card/50 shadow-brand-lg">
-              <Image
-                src={encodeURI("/images/Christian Group Prayer – African Faith, Unity & Spiritual Growth Inspiration.jpg")}
-                alt="Church group gathered in prayer"
-                width={800}
-                height={400}
-                className="h-80 w-full object-cover"
-              />
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { icon: Cross, title: "Faith-Centred", desc: "Built on the foundation of Jesus Christ and His word." },
-                { icon: Heart, title: "Community First", desc: "Strengthening bonds between believers across Zimbabwe." },
-                { icon: Globe, title: "Nationwide Reach", desc: "Connecting all 10 provinces of Zimbabwe." },
-                { icon: Cross, title: "Kingdom Focused", desc: "Advancing God's purposes through unity and service." },
-              ].map((item) => {
-                const Icon = item.icon
-                return (
-                  <div key={item.title} className="rounded-2xl border border-border bg-card/50 p-5 shadow-brand-sm">
-                    <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-secondary">
-                      <Icon className="h-5 w-5 text-background" />
-                    </div>
-                    <h3 className="font-serif font-bold text-foreground">{item.title}</h3>
-                    <p className="mt-1 text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
-                  </div>
-                )
-              })}
-            </div>
+          <div className="mt-4 grid grid-cols-2 gap-3">
+            {values.map(({ icon: Icon, title, desc }) => <div key={title} className="border-t border-secondary/30 pt-4"><Icon className="h-5 w-5 text-secondary" aria-hidden="true" /><h3 className="mt-3 text-sm font-semibold text-foreground">{title}</h3><p className="mt-1 text-xs leading-5 text-muted-foreground">{desc}</p></div>)}
           </div>
         </div>
       </div>

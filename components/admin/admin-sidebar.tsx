@@ -48,7 +48,7 @@ export function AdminSidebar() {
           <Cross className="h-5 w-5 text-[#2F0B20]" />
         </div>
         <div>
-          <h2 className="font-serif text-lg font-bold text-[#FFFDF7]">Christbrand</h2>
+          <h2 className="font-serif text-lg font-bold text-[#FFFDF7]">ChristBand</h2>
           <p className="text-[10px] font-semibold uppercase tracking-widest text-[#D4AF37]">
             Admin Panel
           </p>

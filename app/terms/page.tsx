@@ -10,13 +10,13 @@ export default function TermsPage() {
         <PageHeader
           badge="Terms"
           title="Terms of Service"
-          description="Basic community expectations for using the Christbrand platform."
+          description="Basic community expectations for using the ChristBand platform."
         />
 
         <section className="mx-auto max-w-3xl px-4 py-12">
           <div className="space-y-5 rounded-2xl border border-[#E8E0D0] bg-[#FFFFFF] p-8 text-sm leading-relaxed text-[#7A5A6D] shadow-sm">
             <p>
-              Christbrand is designed for respectful Christian networking, directory discovery, prayer support, events, resources, adverts, and membership management.
+              ChristBand is designed for respectful Christian networking, directory discovery, prayer support, events, resources, adverts, and membership management.
             </p>
             <p>
               Members should submit truthful information, respect other users, avoid abusive or misleading content, and use adverts or listings only for lawful, faith-aligned purposes.

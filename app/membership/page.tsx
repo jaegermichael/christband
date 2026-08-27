@@ -58,7 +58,7 @@ export default function MembershipPage() {
         <PageHeader
           badge="Join Us"
           title="Membership Registration"
-          description="Become a part of the Christbrand family. Register as an individual, church, pastor, or business and connect with the Body of Christ in Zimbabwe."
+          description="Become a part of the ChristBand family. Register as an individual, church, pastor, or business and connect with the Body of Christ in Zimbabwe."
         />
 
         <section className="mx-auto max-w-3xl px-4 py-12">
@@ -169,7 +169,7 @@ export default function MembershipPage() {
                 <div className="mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-[#D4AF37] to-[#E8CC6A]">
                   <CheckCircle className="h-10 w-10 text-[#2F0B20]" />
                 </div>
-                <h2 className="font-serif text-2xl font-bold text-[#2F0B20]">Welcome to Christbrand!</h2>
+                <h2 className="font-serif text-2xl font-bold text-[#2F0B20]">Welcome to ChristBand!</h2>
                 <p className="mx-auto mt-3 max-w-md text-[#7A5A6D] leading-relaxed">
                   Your registration is complete. You are now part of the Body of Christ networking family in Zimbabwe. Check your email for confirmation and next steps.
                 </p>

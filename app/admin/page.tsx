@@ -58,7 +58,7 @@ export default function AdminDashboard() {
         <div className="flex items-center justify-between">
           <div>
             <h1 className="font-serif text-2xl font-bold text-[#2F0B20]">Dashboard</h1>
-            <p className="mt-1 text-sm text-[#7A5A6D]">Overview of your Christbrand platform</p>
+            <p className="mt-1 text-sm text-[#7A5A6D]">Overview of your ChristBand platform</p>
           </div>
           <div className="flex items-center gap-2">
             <TrendingUp className="h-4 w-4 text-emerald-500" />
