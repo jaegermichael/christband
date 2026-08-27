@@ -14,8 +14,8 @@ export function PageHeader({ title, description, badge }: PageHeaderProps) {
       <div className="absolute -bottom-40 left-1/4 h-80 w-80 rounded-full bg-primary/20 blur-3xl" />
       <div className="relative mx-auto max-w-7xl px-4">
         {badge && <div className="mb-5 inline-flex items-center gap-2 border-l-2 border-secondary pl-3 text-xs font-bold uppercase tracking-[0.24em] text-secondary"><Cross className="h-3.5 w-3.5" aria-hidden="true" />{badge}</div>}
-        <h1 className="max-w-3xl font-serif text-4xl font-semibold leading-tight tracking-[-0.03em] text-foreground md:text-6xl">{title}</h1>
-        <p className="mt-5 max-w-2xl text-base leading-8 text-muted-foreground md:text-lg">{description}</p>
+        <h1 className="max-w-3xl font-serif text-4xl font-semibold leading-tight tracking-[-0.03em] text-white md:text-6xl">{title}</h1>
+        <p className="mt-5 max-w-2xl text-base leading-8 text-white/75 md:text-lg">{description}</p>
       </div>
     </section>
   )
