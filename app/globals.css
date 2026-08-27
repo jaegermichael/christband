@@ -163,11 +163,6 @@
     text-wrap: balance;
   }
 
-  .brand-grid {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-    background-size: 36px 36px;
-  }
-
   .brand-glow {
     box-shadow: 0 0 0 1px rgba(248, 210, 153, 0.18), 0 22px 80px rgba(109, 45, 168, 0.35);
   }

@@ -12,7 +12,6 @@ export function Hero() {
   return (
     <section className="relative isolate overflow-hidden border-b border-secondary/25 bg-[#3A0353]">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_25%,rgba(128,72,170,0.38),transparent_30%),linear-gradient(115deg,#3A0353_8%,#3A0353_54%,rgba(58,3,83,0.58)_100%)]" />
-      <div className="brand-grid absolute inset-0 opacity-35" />
       <div className="absolute -right-40 top-10 -z-10 h-[30rem] w-[30rem] rounded-full border border-secondary/20 bg-primary/25 blur-3xl" />
 
       <div className="mx-auto grid min-h-[570px] max-w-7xl items-center gap-10 px-4 py-14 md:grid-cols-[1fr_0.82fr] md:py-16 lg:gap-20">

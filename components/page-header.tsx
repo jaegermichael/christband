@@ -9,7 +9,6 @@ interface PageHeaderProps {
 export function PageHeader({ title, description, badge }: PageHeaderProps) {
   return (
     <section className="relative isolate overflow-hidden border-b border-secondary/20 bg-[#4F1A74] py-16 md:py-20">
-      <div className="brand-grid absolute inset-0 opacity-45" />
       <div className="absolute -right-24 -top-32 h-80 w-80 rounded-full border border-secondary/20 bg-primary/30 blur-2xl" />
       <div className="absolute -bottom-40 left-1/4 h-80 w-80 rounded-full bg-primary/20 blur-3xl" />
       <div className="relative mx-auto max-w-7xl px-4">

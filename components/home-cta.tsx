@@ -4,7 +4,6 @@ import { ArrowUpRight, Cross } from "lucide-react"
 export function HomeCTA() {
   return (
     <section className="relative overflow-hidden bg-secondary px-4 py-16 text-secondary-foreground md:py-20">
-      <div className="brand-grid absolute inset-0 opacity-20" />
       <div className="relative mx-auto flex max-w-7xl flex-col gap-8 md:flex-row md:items-end md:justify-between">
         <div className="max-w-2xl">
           <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.28em]"><Cross className="h-4 w-4" aria-hidden="true" />For every part of the Body</div>
