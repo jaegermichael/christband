@@ -4,58 +4,58 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #3A0353;
-  --foreground: #FFFFFF;
-  --card: #4F1A74;
-  --card-foreground: #FFFFFF;
-  --popover: #4F1A74;
-  --popover-foreground: #FFFFFF;
-  --primary: #8048AA;
+  --background: #FFFFFF;
+  --foreground: #3A0353;
+  --card: #FFFFFF;
+  --card-foreground: #3A0353;
+  --popover: #FFFFFF;
+  --popover-foreground: #3A0353;
+  --primary: #3A0353;
   --primary-foreground: #FFFFFF;
   --secondary: #F8D299;
   --secondary-foreground: #3A0353;
-  --muted: #5B1C87;
-  --muted-foreground: #E8DDF0;
-  --accent: #F59E51;
-  --accent-foreground: #3A0353;
+  --muted: #F5EEF9;
+  --muted-foreground: #6E5A79;
+  --accent: #8048AA;
+  --accent-foreground: #FFFFFF;
   --destructive: #ef766d;
   --destructive-foreground: #3A0353;
-  --border: rgba(248, 210, 153, 0.22);
-  --input: rgba(248, 210, 153, 0.28);
-  --ring: #F8D299;
-  --chart-1: #F8D299;
-  --chart-2: #A866C8;
-  --chart-3: #8048AA;
-  --chart-4: #FFFFFF;
+  --border: rgba(58, 3, 83, 0.14);
+  --input: rgba(58, 3, 83, 0.18);
+  --ring: #8048AA;
+  --chart-1: #8048AA;
+  --chart-2: #F59E51;
+  --chart-3: #3A0353;
+  --chart-4: #F8D299;
   --chart-5: #6E2A96;
   --radius: 0.9rem;
-  --sidebar: #3A0353;
-  --sidebar-foreground: #FFFFFF;
-  --sidebar-primary: #8048AA;
+  --sidebar: #F7F2FA;
+  --sidebar-foreground: #3A0353;
+  --sidebar-primary: #3A0353;
   --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #5B1C87;
-  --sidebar-accent-foreground: #FFFFFF;
-  --sidebar-border: rgba(246, 232, 200, 0.18);
-  --sidebar-ring: #F8D299;
+  --sidebar-accent: #EEE3F5;
+  --sidebar-accent-foreground: #3A0353;
+  --sidebar-border: rgba(58, 3, 83, 0.14);
+  --sidebar-ring: #8048AA;
   --chart-background: #FFFFFF;
   --chart-foreground: #3A0353;
-  --chart-foreground-muted: #745d79;
+  --chart-foreground-muted: #6E5A79;
   --chart-line-primary: var(--chart-1);
   --chart-line-secondary: var(--chart-2);
-  --chart-crosshair: #8048AA;
-  --chart-grid: #eadfc9;
+  --chart-crosshair: #3A0353;
+  --chart-grid: #E5D8EF;
   --chart-brush-border: var(--chart-grid);
-  --chart-tooltip-background: #4F1A74;
+  --chart-tooltip-background: #3A0353;
   --chart-tooltip-foreground: #FFFFFF;
-  --chart-tooltip-muted: #E8DDF0;
+  --chart-tooltip-muted: #D9C5E6;
   --chart-marker-background: #FFFFFF;
-  --chart-marker-border: #eadfc9;
+  --chart-marker-border: #8048AA;
   --chart-marker-foreground: #3A0353;
-  --chart-label: #D9C5E6;
-  --chart-scale-01: #FFFFFF;
-  --chart-scale-02: #d9b8ec;
-  --chart-scale-03: #b17ad6;
-  --chart-scale-04: #8e4ebd;
+  --chart-label: #6E5A79;
+  --chart-scale-01: #F7F2FA;
+  --chart-scale-02: #E8D8F0;
+  --chart-scale-03: #C6A6D7;
+  --chart-scale-04: #A66EBE;
   --chart-scale-05: #8048AA;
   --chart-scale-pattern-color: #FFFFFF;
 }
@@ -134,7 +134,7 @@
 
   body {
     @apply bg-background text-foreground;
-    background-image: radial-gradient(circle at 12% 12%, rgba(109, 45, 168, 0.2), transparent 32rem), radial-gradient(circle at 88% 72%, rgba(248, 210, 153, 0.08), transparent 28rem);
+    background-image: radial-gradient(circle at 12% 0%, rgba(128, 72, 170, 0.08), transparent 32rem), radial-gradient(circle at 92% 72%, rgba(245, 158, 81, 0.08), transparent 28rem);
   }
 
   ::selection {
@@ -164,7 +164,7 @@
   }
 
   .brand-grid {
-    background-image: linear-gradient(rgba(246, 232, 200, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(246, 232, 200, 0.06) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
     background-size: 36px 36px;
   }
 
