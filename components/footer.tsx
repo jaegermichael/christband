@@ -18,7 +18,7 @@ export function Footer() {
               <span><span className="block font-serif text-2xl font-semibold text-foreground group-hover:text-secondary">ChristBand</span><span className="block text-[10px] font-semibold uppercase tracking-[0.24em] text-secondary">Connect · Worship · Serve</span></span>
             </Link>
             <p className="mt-6 max-w-sm text-sm leading-7 text-muted-foreground">One platform for Zimbabwe’s churches, believers, pastors, ministries, and Christian businesses to connect, worship, serve, and grow.</p>
-            <Link href="/membership" className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-secondary hover:text-[#ffd16a]">Join the community <ArrowUpRight className="h-4 w-4" aria-hidden="true" /></Link>
+            <Link href="/membership" className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-secondary hover:text-[#F59E51]">Join the community <ArrowUpRight className="h-4 w-4" aria-hidden="true" /></Link>
           </div>
           <div className="grid gap-8 sm:grid-cols-3">
             {footerSections.map((section) => <div key={section.title}><h2 className="text-xs font-bold uppercase tracking-[0.22em] text-secondary">{section.title}</h2><ul className="mt-4 space-y-3">{section.links.map((link) => <li key={link.href}><Link href={link.href} className="text-sm text-muted-foreground hover:text-foreground">{link.label}</Link></li>)}</ul></div>)}

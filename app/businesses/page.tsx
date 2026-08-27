@@ -119,7 +119,7 @@ export default function BusinessesPage() {
                     <h3 className="font-serif text-lg font-bold text-foreground">{ad.title}</h3>
                     <p className="mt-1 text-xs font-medium text-secondary">{ad.business}</p>
                     <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{ad.description}</p>
-                    <Link href={ad.href} className="mt-4 inline-flex items-center gap-1.5 rounded-md bg-secondary px-5 py-2 text-sm font-bold text-secondary-foreground transition-all hover:-translate-y-0.5 hover:bg-[#ffd16a]">
+                    <Link href={ad.href} className="mt-4 inline-flex items-center gap-1.5 rounded-md bg-secondary px-5 py-2 text-sm font-bold text-secondary-foreground transition-all hover:-translate-y-0.5 hover:bg-[#F59E51]">
                       {ad.cta} <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
                     </Link>
                   </div>

@@ -41,8 +41,8 @@ export function Navbar() {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-[#160b25]/95 backdrop-blur-xl">
-      <div className="border-b border-secondary/20 bg-[#211132] text-xs text-parchment">
+    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-[#3A0353]/95 backdrop-blur-xl">
+      <div className="border-b border-secondary/20 bg-[#4F1A74] text-xs text-parchment">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2">
           <span className="flex items-center gap-2 font-medium tracking-wide">
             <Cross className="h-3.5 w-3.5 text-secondary" aria-hidden="true" />
@@ -83,7 +83,7 @@ export function Navbar() {
                   <ChevronDown className="h-3.5 w-3.5" aria-hidden="true" />
                 </Link>
                 {openDropdown === link.label && (
-                  <div className="absolute left-0 top-full z-50 min-w-[210px] rounded-lg border border-secondary/25 bg-[#211132] p-2 shadow-2xl" role="menu">
+                  <div className="absolute left-0 top-full z-50 min-w-[210px] rounded-lg border border-secondary/25 bg-[#4F1A74] p-2 shadow-2xl" role="menu">
                     {link.children.map((child) => (
                       <Link key={child.href} href={child.href} role="menuitem" className="block rounded-md px-3 py-2 text-sm text-foreground/80 hover:bg-secondary/10 hover:text-secondary">
                         {child.label}
@@ -101,7 +101,7 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-3">
-          <Link href="/membership" className="hidden rounded-md bg-secondary px-4 py-2 text-sm font-bold text-secondary-foreground shadow-[0_8px_24px_rgba(242,181,68,0.2)] hover:-translate-y-0.5 hover:bg-[#ffd16a] md:block">
+          <Link href="/membership" className="hidden rounded-md bg-secondary px-4 py-2 text-sm font-bold text-secondary-foreground shadow-[0_8px_24px_rgba(242,181,68,0.2)] hover:-translate-y-0.5 hover:bg-[#F59E51] md:block">
             Join the community
           </Link>
           <button onClick={() => setMobileOpen(!mobileOpen)} className="rounded-md border border-white/10 p-2 text-foreground hover:border-secondary/50 hover:text-secondary lg:hidden" aria-label="Toggle navigation menu" aria-expanded={mobileOpen} aria-controls="mobile-menu">
@@ -111,7 +111,7 @@ export function Navbar() {
       </nav>
 
       {mobileOpen && (
-        <div id="mobile-menu" className="border-t border-secondary/20 bg-[#211132] px-4 pb-5 lg:hidden">
+        <div id="mobile-menu" className="border-t border-secondary/20 bg-[#4F1A74] px-4 pb-5 lg:hidden">
           {navLinks.map((link) =>
             link.children ? (
               <div key={link.label} className="border-b border-white/10">

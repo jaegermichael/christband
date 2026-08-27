@@ -40,7 +40,7 @@ export default function PrivacyPage() {
               <p className="max-w-3xl text-base leading-8 text-muted-foreground">Welcome to ChristBand, a Christian community platform designed to bring Christians, churches, pastors, gospel artists, Christian organisations, ministries, and Christian businesses together on one platform.</p>
               <p className="mt-5 max-w-3xl text-base leading-8 text-muted-foreground">This Privacy Policy explains how ChristBand collects, uses, stores, protects, and shares information when you use our website, applications, services, church directory, prayer request services, media services, Christian Store, and other features.</p>
             </div>
-            <aside className="rounded-xl border border-secondary/30 bg-[#211132] p-5" aria-label="Policy summary">
+            <aside className="rounded-xl border border-secondary/30 bg-[#4F1A74] p-5" aria-label="Policy summary">
               <ShieldCheck className="h-6 w-6 text-secondary" aria-hidden="true" />
               <p className="mt-4 text-sm font-semibold text-foreground">Privacy · Faith · Community · Connection</p>
               <p className="mt-2 text-sm leading-6 text-muted-foreground">Please read this policy before registering or submitting information.</p>
@@ -94,15 +94,15 @@ export default function PrivacyPage() {
 
             <PolicySection number="19" title="Complaints and Privacy Concerns"><p>If you believe that ChristBand has mishandled your personal information or you have a privacy concern, please contact us. We will review privacy complaints and take reasonable steps to investigate and respond.</p></PolicySection>
 
-            <PolicySection number="20" title="Contact Us"><p>For privacy questions, requests, complaints, or concerns, please contact ChristBand through the channels currently published on the launch flyer and platform:</p><div className="mt-5 grid gap-3 sm:grid-cols-2"><a href="https://wa.me/263780396185" target="_blank" rel="noreferrer" className="flex items-center gap-3 rounded-lg border border-secondary/30 bg-[#211132] p-4 text-sm font-semibold text-foreground hover:border-secondary"><CheckCircle2 className="h-5 w-5 text-secondary" aria-hidden="true" />WhatsApp: +263 78 039 6185</a><a href="tel:+263242485604" className="flex items-center gap-3 rounded-lg border border-secondary/30 bg-[#211132] p-4 text-sm font-semibold text-foreground hover:border-secondary"><CheckCircle2 className="h-5 w-5 text-secondary" aria-hidden="true" />Phone: +263 24 2485604</a></div><p>The supplied policy contains placeholders for an official email address and website. Those details should be added here by ChristBand before launch.</p></PolicySection>
+            <PolicySection number="20" title="Contact Us"><p>For privacy questions, requests, complaints, or concerns, please contact ChristBand through the channels currently published on the launch flyer and platform:</p><div className="mt-5 grid gap-3 sm:grid-cols-2"><a href="https://wa.me/263780396185" target="_blank" rel="noreferrer" className="flex items-center gap-3 rounded-lg border border-secondary/30 bg-[#4F1A74] p-4 text-sm font-semibold text-foreground hover:border-secondary"><CheckCircle2 className="h-5 w-5 text-secondary" aria-hidden="true" />WhatsApp: +263 78 039 6185</a><a href="tel:+263242485604" className="flex items-center gap-3 rounded-lg border border-secondary/30 bg-[#4F1A74] p-4 text-sm font-semibold text-foreground hover:border-secondary"><CheckCircle2 className="h-5 w-5 text-secondary" aria-hidden="true" />Phone: +263 24 2485604</a></div><p>The supplied policy contains placeholders for an official email address and website. Those details should be added here by ChristBand before launch.</p></PolicySection>
 
             <PolicySection number="21" title="Acceptance"><p>By registering for or using ChristBand, you acknowledge that you have had an opportunity to read this Privacy Policy and understand how your information may be collected and used.</p><p>If you do not agree with this Privacy Policy, you should discontinue use of ChristBand and contact us regarding your account or personal information.</p></PolicySection>
           </article>
 
           <div className="mt-12 flex flex-wrap items-center gap-4 border-t border-secondary/20 pt-8 text-sm text-muted-foreground">
-            <Link href="/terms" className="font-semibold text-secondary hover:text-[#ffd16a]">Read the Terms of Service</Link>
+            <Link href="/terms" className="font-semibold text-secondary hover:text-[#F59E51]">Read the Terms of Service</Link>
             <span aria-hidden="true">·</span>
-            <Link href="/contact" className="font-semibold text-secondary hover:text-[#ffd16a]">Contact ChristBand</Link>
+            <Link href="/contact" className="font-semibold text-secondary hover:text-[#F59E51]">Contact ChristBand</Link>
           </div>
         </section>
       </main>
